@@ -8,39 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: { brand: colors.sky, error: colors.red },
-      animation: {
-        progress: 'progress 0.75s linear infinite normal none',
-        'fade-in': 'fade-in var(--t) cubic-bezier(0.32, 0, 0.64, 0) var(--d) both',
-        'fade-out': 'fade-out var(--t) cubic-bezier(0.32, 0, 0.64, 0) var(--d) both',
-        'scale-in': 'scale-in var(--t) cubic-bezier(0.32, 0, 0.64, 0) var(--d) both',
-        'scale-out': 'scale-out var(--t) cubic-bezier(0.32, 0, 0.64, 0) var(--d) both',
-        'slide-infinite': 'slide-infinite 2.5s linear infinite',
-      },
-      keyframes: {
-        progress: {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(100%)' },
-        },
-        'fade-in': {
-          '0%': { opacity: 'var(--o)', transform: 'translate(var(--x), var(--y))' },
-          '100%': { opacity: '1', transform: 'translate(0, 0)' },
-        },
-        'fade-out': {
-          '0%': { opacity: 'var(--o)', transform: 'translate(0, 0)' },
-          '100%': { opacity: '0', transform: 'translate(var(--x), var(--y))' },
-        },
-        'scale-in': {
-          '0%': { opacity: 'var(--o)', transform: 'scale(var(--s))' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
-        },
-        'scale-out': {
-          '0%': { opacity: '1', transform: 'scale(1)' },
-          '100%': { opacity: '0', transform: 'scale(var(--s))' },
-        },
-        'slide-infinite': {
-          '0%': { transform: 'translateY(-5px)' },
-          '100%': { transform: 'translateY(60px)' },
-        },
+      boxShadow: {
+        neon: '0 0 0 2px #fff, 0 0 0 2px var(--color), 0 0 24px var(--color), 0 0 12px var(--color), 0 0 36px var(--color)',
       },
       transitionDelay: { 0: '0ms' },
       transitionDuration: { 250: '250ms', 350: '350ms', 400: '400ms' },
@@ -52,7 +21,7 @@ module.exports = {
     },
   },
   content: [
-    './pages/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
     './icons/**/*.{ts,tsx}',
     './views/**/*.{ts,tsx}',
     './layouts/**/*.{ts,tsx}',
@@ -60,8 +29,15 @@ module.exports = {
   ],
   plugins: [
     require('tailwindcss-radix'),
+    require('tailwindcss-animate'),
     plugin(function ({ addUtilities }) {
       addUtilities({
+        '.text-shine': {
+          'text-shadow': '0 0 0.25rem rgb(255,255,255)',
+        },
+        '.text-shine-md': {
+          'text-shadow': '0 0 0.5rem rgb(255,255,255), 0 0 1rem rgb(255,255,255)',
+        },
         '.flex-center': {
           'align-items': 'center',
           'justify-content': 'center',

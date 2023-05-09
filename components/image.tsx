@@ -1,3 +1,4 @@
+'use client';
 import { VariantProps, cva } from 'class-variance-authority';
 import Img, { ImageProps } from 'next/image';
 import { useState } from 'react';

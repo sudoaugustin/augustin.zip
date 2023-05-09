@@ -3,15 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --o: 0;
-    --x: 0;
-    --y: 0;
-    --d: 0s;
-    --s: 0.75;
-    --t: 0.25s;
-    --header: 84px;
-  }
   
   * {
     -webkit-tap-highlight-color: transparent;
@@ -27,6 +18,7 @@
 }
 
 @layer components {
+  
   .input,
   .phone,
   .select,
@@ -51,5 +43,8 @@
 }
 
 @layer utilities{
-
+  .bg-boxes{
+    background-image:  linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.05) 1px, rgba(250, 250, 250, 0) 1px);
+    background-size: 50px 50px;
+  }
 }

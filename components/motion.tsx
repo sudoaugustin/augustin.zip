@@ -1,10 +1,9 @@
+'use client';
 import { useInView } from 'framer-motion';
 import { ReactHTML, createElement, useRef } from 'react';
 import { cssvars } from 'utils';
 
 type Props<T extends keyof ReactHTML> = {
-  x?: number;
-  y?: number;
   as?: T;
   delay?: number;
   options?: Parameters<typeof useInView>['1'];
@@ -12,8 +11,6 @@ type Props<T extends keyof ReactHTML> = {
 
 export default function Motion<T extends keyof ReactHTML = 'div'>({
   as,
-  x = 0,
-  y = 0,
   style,
   options,
   children,
@@ -22,14 +19,14 @@ export default function Motion<T extends keyof ReactHTML = 'div'>({
   ...rest
 }: Props<T>) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 'all', ...options });
+  const isInView = useInView(ref, { once: true, ...options });
 
   return createElement(
     as || 'div',
     {
       ref,
-      style: { ...cssvars({ x: `${x}rem`, y: `${y}rem`, t: '0.75s', d: `${delay}s` }), ...style },
-      className: `duration-500 ease-linear fill-mode-both ${isInView ? 'animate-fade-in' : 'animate-fade-out'} ${className}`,
+      style: { ...cssvars({ t: '0.5s', d: `${delay}s` }), ...style },
+      className: `scale-0 ${isInView && 'animate-scale-in'} ${className}`,
       ...rest,
     },
     children,

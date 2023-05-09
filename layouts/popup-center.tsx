@@ -1,3 +1,4 @@
+'use client';
 import { XMarkIcon } from '@heroicons/react/20/solid';
 import { useStore } from '@nanostores/react';
 import { Action, Cancel, Content, Description, Overlay, Root, Title } from '@radix-ui/react-alert-dialog';

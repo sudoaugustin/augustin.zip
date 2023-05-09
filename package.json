@@ -19,6 +19,7 @@
     "@radix-ui/react-label": "^2.0.0",
     "@radix-ui/react-navigation-menu": "^1.1.2",
     "@radix-ui/react-radio-group": "^1.1.0",
+    "@radix-ui/react-scroll-area": "^1.0.3",
     "@radix-ui/react-select": "^1.1.2",
     "@rive-app/react-canvas": "^3.0.34",
     "axios": "^1.2.2",
@@ -28,7 +29,7 @@
     "libphonenumber-js": "^1.10.18",
     "lodash": "^4.17.21",
     "nanostores": "^0.7.1",
-    "next": "^13.2.4",
+    "next": "^13.4.1",
     "plaiceholder": "^2.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -51,7 +52,8 @@
     "next-sitemap": "^3.1.45",
     "postcss": "^8.4.21",
     "rome": "^11.0.0",
-    "tailwindcss": "^3.2.4",
+    "tailwindcss": "^3.3.2",
+    "tailwindcss-animate": "^1.0.5",
     "tailwindcss-radix": "^2.6.2",
     "typescript": "^4.9.5"
   }
