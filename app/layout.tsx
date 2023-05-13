@@ -14,7 +14,7 @@ type Props = {
 
 export default function AppLayout({ children }: Props) {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable} ${serif.variable} font-sans`}>
+    <html lang="en" style={{ color: '#fff' }} className={`${sans.variable} ${mono.variable} ${serif.variable} font-sans`}>
       <head>
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
       </head>
