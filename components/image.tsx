@@ -10,7 +10,7 @@ type Props = Omit<ImageProps, 'alt' | 'sizes'> & {
   sizes?: { sm?: string; md?: string; lg?: string; xl?: string; '2xl'?: string };
 };
 
-const classes = cva('bg-gray-200 object-cover object-center ease-linear', {
+const classes = cva('object-cover object-center ease-linear bg-white', {
   variants: {
     state: {
       error: 'cursor-not-allowed',

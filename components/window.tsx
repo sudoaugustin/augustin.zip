@@ -1,6 +1,6 @@
 'use client';
-import * as ScrollArea from '@radix-ui/react-scroll-area';
 import { HTMLAttributes, ReactHTML, createElement } from 'react';
+import ScrollArea from './scrollarea';
 
 type Props = HTMLAttributes<HTMLElement> & { as?: keyof ReactHTML };
 
@@ -10,17 +10,9 @@ export default function Window({ as = 'div', title, children, className, ...rest
       <div className='p-2 text-center text-xs font-medium text-violet-100 tracking-wide border-b border-white/5 group-hover/window:border-white/10'>
         <p>{title}</p>
       </div>
-      <ScrollArea.Root type='always' className='overflow-hidden'>
-        <ScrollArea.Viewport className='w-full max-h-[25rem] sm:max-h-[17.75rem] lg:max-h-[25rem]'>
-          {createElement(as, { ...rest, className: `grid ${className}` }, children)}
-        </ScrollArea.Viewport>
-        <ScrollArea.Scrollbar
-          className="select-none touch-none p-1 w-4 duration-250 opacity-0 group-hover/window:opacity-100"
-          orientation="vertical"
-        >
-          <ScrollArea.Thumb className="bg-white/10 rounded-md" />
-        </ScrollArea.Scrollbar>
-      </ScrollArea.Root>
+      <ScrollArea className='w-full max-h-[25rem] sm:max-h-[17.75rem] lg:max-h-[25rem]'>
+        {createElement(as, { ...rest, className: `grid ${className}` }, children)}
+      </ScrollArea>
     </div>
   );
 }
