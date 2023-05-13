@@ -1,23 +1,21 @@
 'use client';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactHTML, createElement } from 'react';
 
-type Props = HTMLAttributes<HTMLElement>;
+type Props = HTMLAttributes<HTMLElement> & { as?: keyof ReactHTML };
 
-export default function Window({ title, children, className, ...rest }: Props) {
+export default function Window({ as = 'div', title, children, className, ...rest }: Props) {
   return (
-    <div className='bg-white/5 backdrop-blur group rounded-lg shadow-xl border border-white/10 hover:scale-105 duration-250'>
-      <div className='p-2 text-center text-xs font-medium tracking-wide border-b border-white/5'>
+    <div className="w-full max-w-[22rem] bg-white/[0.015] bg-gradient-to-tr from-violet-500/5 to-indigo-500/10 hover:bg-gradient-to-br backdrop-blur-lg group/window rounded-lg ring-1 ring-inset ring-white/10 duration-500 hover:scale-105 hover:ring-white/20">
+      <div className='p-2 text-center text-xs font-medium text-violet-100 tracking-wide border-b border-white/5 group-hover/window:border-white/10'>
         <p>{title}</p>
       </div>
       <ScrollArea.Root type='always' className='overflow-hidden'>
-        <ScrollArea.Viewport className='w-full max-h-[24rem]'>
-          <div {...rest} className={`grid ${className}`}>
-            {children}
-          </div>
+        <ScrollArea.Viewport className='w-full max-h-[25rem] sm:max-h-[17.75rem] lg:max-h-[25rem]'>
+          {createElement(as, { ...rest, className: `grid ${className}` }, children)}
         </ScrollArea.Viewport>
         <ScrollArea.Scrollbar
-          className="select-none touch-none p-0.5 w-3 duration-250 opacity-0 group-hover:opacity-100"
+          className="select-none touch-none p-1 w-4 duration-250 opacity-0 group-hover/window:opacity-100"
           orientation="vertical"
         >
           <ScrollArea.Thumb className="bg-white/10 rounded-md" />

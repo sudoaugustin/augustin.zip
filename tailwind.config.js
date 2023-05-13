@@ -8,9 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: { brand: colors.sky, error: colors.red },
-      boxShadow: {
-        neon: '0 0 0 2px #fff, 0 0 0 2px var(--color), 0 0 24px var(--color), 0 0 12px var(--color), 0 0 36px var(--color)',
-      },
+      boxShadow: { shine: '0 0 2rem #6d28d9, 0 0 0.8rem #6d28d9, 0 0 2.8rem #6d28d9, inset 0 0 1.3rem #6d28d9' },
       transitionDelay: { 0: '0ms' },
       transitionDuration: { 250: '250ms', 350: '350ms', 400: '400ms' },
     },
@@ -30,13 +28,20 @@ module.exports = {
   plugins: [
     require('tailwindcss-radix'),
     require('tailwindcss-animate'),
-    plugin(function ({ addUtilities }) {
+    plugin(function ({ theme, addUtilities }) {
       addUtilities({
-        '.text-shine': {
-          'text-shadow': '0 0 0.25rem rgb(255,255,255)',
+        '.box-shine': {
+          'box-shadow': `0 0 4px #fff, 0 0 4px #fff, 0 0 16px ${theme('colors.violet.700')}, 0 0 12px ${theme(
+            'colors.violet.700',
+          )}, inset 0 0 20px ${theme('colors.violet.700')}`,
         },
-        '.text-shine-md': {
-          'text-shadow': '0 0 0.5rem rgb(255,255,255), 0 0 1rem rgb(255,255,255)',
+        '.text-shine': {
+          'text-shadow': `0 0 4px ${theme('colors.violet.50')}, 0 0 16px ${theme('colors.violet.600')}, 0 0 32px ${theme(
+            'colors.violet.600',
+          )}`,
+        },
+        '.text-shine-none': {
+          'text-shadow': 'none',
         },
         '.flex-center': {
           'align-items': 'center',

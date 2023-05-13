@@ -12,10 +12,12 @@ export default function Launcher({ name, icon, link }: Props) {
       href={link}
       rel="noreferrer"
       target="_blank"
-      className={`text-shine hover:text-shine-md duration-150 flex flex-col items-center ${link ? 'cursor-pointer' : 'cursor-wait'}`}
+      className={`duration-150 group/launcher flex flex-col items-center ${link ? 'cursor-pointer' : 'cursor-wait'}`}
     >
-      <i className='bg-gray-500/25 object-center rounded-lg overflow-hidden [&>svg]:w-12 mb-3.5'>{icon}</i>
-      <p className="text-center text-xs font-semibold">{name}</p>
+      <i className='bg-white/10 object-center rounded-lg overflow-hidden [&>svg]:w-12 mb-3.5'>{icon}</i>
+      <p className="text-center whitespace-nowrap text-xs/none font-semibold text-shine rounded-md py-1 px-2 duration-150 group-hover/launcher:bg-white group-hover/launcher:shadow-shine group-hover/launcher:text-shine-none group-hover/launcher:text-violet-600">
+        {name}
+      </p>
     </a>
   );
 }

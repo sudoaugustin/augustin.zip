@@ -13,7 +13,7 @@ export default function PopupCenter() {
       <Overlay className="fixed inset-0 z-40 bg-black/20 animate-in fade-in-0" />
       <Content className="fixed z-50 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
         <div className={`w-full max-w-lg p-5 bg-white rounded-lg shadow-xl animate-in fade-in-0 zoom-in-75 ${className}`}>
-          <Cancel className='absolute top-2 right-2 rounded-full p-1 text-gray-600 focus:ring-2 hover:text-gray-800 hover:bg-slate-100 duration-150'>
+          <Cancel className='absolute top-2 right-2 rounded-full p-1 text-gray-600 focus:ring-2 hover:text-gray-800 hover:bg-gray-100 duration-150'>
             <XMarkIcon className='w-4' />
           </Cancel>
           {title && <Title className='text-lg font-semibold text-gray-800'>{title}</Title>}

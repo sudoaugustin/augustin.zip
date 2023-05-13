@@ -1,3 +1,4 @@
+import Button from 'components/button';
 import Launcher from 'components/launcher';
 import Website from 'components/website';
 import Window from 'components/window';
@@ -6,11 +7,15 @@ import {
   ESBuild,
   Express,
   FramerMotion,
+  Jest,
+  Laravel,
+  Mongo,
   Nanostore,
   NextJS,
   NodeJS,
   RadixUI,
   Recoil,
+  Redux,
   Rome,
   SASS,
   TailwindCSS,
@@ -19,10 +24,10 @@ import {
 import { Metadata } from 'next';
 
 const contacts = [
-  { name: 'Github', link: 'https://github.com/sudoaugustin' },
-  { name: 'Twitter', link: 'https://twitter.com/sudoaugustin' },
-  { name: 'LinkedIn', link: 'https://www.linkedin.com/in/sudoaugustin/' },
-  { name: 'sudoaugustin@gmail.com', link: 'mailto:sudoaugustin@gmail.com' },
+  { name: 'Github', href: 'https://github.com/sudoaugustin' },
+  { name: 'Twitter', href: 'https://twitter.com/sudoaugustin' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/sudoaugustin/' },
+  { name: 'sudoaugustin@gmail.com', href: 'mailto:sudoaugustin@gmail.com' },
 ];
 
 const techstacks = [
@@ -31,13 +36,15 @@ const techstacks = [
     items: [
       { name: 'NodeJS', link: 'https://nodejs.org/', icon: <NodeJS /> },
       { name: 'Typescript', link: 'https://www.typescriptlang.org/', icon: <Typescript /> },
-      { name: 'ESBuild', link: 'https://esbuild.github.io/', icon: <ESBuild /> },
-      { name: 'Rome', link: 'https://rome.tools/', icon: <Rome /> },
       { name: 'NextJS', link: 'https://nextjs.org/', icon: <NextJS /> },
+      { name: 'Tailwind', link: 'https://tailwindcss.com/', icon: <TailwindCSS /> },
       { name: 'Nanostore', link: 'https://github.com/nanostores', icon: <Nanostore /> },
       { name: 'Radix UI', link: 'https://www.radix-ui.com/', icon: <RadixUI /> },
       { name: 'Framer Motion', link: 'https://www.framer.com/motion/', icon: <FramerMotion /> },
-      { name: 'Tailwind', link: 'https://tailwindcss.com/', icon: <TailwindCSS /> },
+      { name: 'ESBuild', link: 'https://esbuild.github.io/', icon: <ESBuild /> },
+      { name: 'Rome', link: 'https://rome.tools/', icon: <Rome /> },
+      { name: 'Jest', link: 'https://jestjs.io/', icon: <Jest /> },
+      { name: 'MongoDB', link: 'https://www.mongodb.com/', icon: <Mongo /> },
     ],
   },
   {
@@ -45,7 +52,9 @@ const techstacks = [
     items: [
       { name: 'SCSS', link: 'https://sass-lang.com/', icon: <SASS /> },
       { name: 'Recoil', link: 'https://recoiljs.org/', icon: <Recoil /> },
+      { name: 'Redux', link: 'https://redux.js.org/', icon: <Redux /> },
       { name: 'Express', link: 'https://expressjs.com/', icon: <Express /> },
+      { name: 'Laravel', link: 'https://laravel.com/', icon: <Laravel /> },
     ],
   },
 ];
@@ -62,9 +71,9 @@ const devprojects = [
     link: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailpile',
   },
   {
-    name: 'TailwindCSS Transpiler',
-    icon: <TailwindTranspiler />,
-    link: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailwindcss-transpiler',
+    name: 'Renex',
+    icon: <Renex />,
+    link: 'https://www.npmjs.com/package/renex',
   },
   {
     name: 'Favecon',
@@ -72,9 +81,9 @@ const devprojects = [
     link: 'https://www.npmjs.com/package/favecon',
   },
   {
-    name: 'Renex',
-    icon: <Renex />,
-    link: 'https://www.npmjs.com/package/renex',
+    name: 'Tailwind Transpiler',
+    icon: <TailwindTranspiler />,
+    link: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailwindcss-transpiler',
   },
   {
     name: 'Loading...',
@@ -85,25 +94,21 @@ const devprojects = [
 const cdgprojects = [
   {
     href: 'codigo.co',
-    color: '#d5333e',
     image: 'codigo.png',
     timeline: '2022 - Present • codigo',
   },
   {
     href: 'neuroglee.com',
-    color: '#2563eb',
     image: 'neuroglee.png',
     timeline: '2022 - Present • codigo',
   },
   {
     href: 'trifectasingapore.com',
-    color: '#1d5cb7', // #e2e500
     image: 'trifectasingapore.png',
     timeline: '2023 • codigo',
   },
   {
     href: 'boulderm.com',
-    color: '#ee4266',
     image: 'boulderm.png',
     timeline: '2022 • codigo',
   },
@@ -111,52 +116,62 @@ const cdgprojects = [
 
 export default function AppPage() {
   return (
-    <main className='p-20 animate-in fade-in-0 slide-in-from-bottom-4 duration-400 [&>section]:relative [&>section]:z-10 text-white bg-boxes bg-black min-h-screen before:fixed before:bg-gradient-to-br before:from-purple-950/40 before:via-fuchsia-950/40 before:to-violet-950/40 before:inset-0'>
-      <section>
-        <h1 className='max-w-lg leading-relaxed'>
-          I'm Augustin, a fullstack developer based in Yangon. I work at{' '}
-          <a
-            href="https://www.codigo.co"
-            className='text-shine hover:text-shine-md underline underline-offset-2 decoration-wavy font-medium'
-          >
-            Codigo
-          </a>{' '}
-          as a front-end developer during day and mini dev projects at night. I won Technical Award at{' '}
-          <a
-            href='https://witaward.com/result/2019#section3'
-            className='text-shine hover:text-shine-md underline underline-offset-2 decoration-wavy font-medium'
-          >
-            WIT 2019
-          </a>
-          .
-        </h1>
-      </section>
-      <section className='py-20 flex space-x-10 items-start'>
-        <div className='space-y-10 grid-cols-3 w-[22rem]'>
-          <Window title='Dev Projects' className='gap-x-2.5 gap-y-10 py-10 grid-cols-3'>
-            {devprojects.map((project) => (
-              <Launcher key={project.name} {...project} />
-            ))}
-          </Window>
-          <Window title='Tech Stacks' className='p-1'>
-            {techstacks.map(({ name, items }) => (
-              <div key={name} className='p-2.5'>
-                <h4 className='text-slate-400 text-[0.625rem] uppercase mb-2.5 font-semibold'>{name}</h4>
-                <div className='grid gap-x-10 gap-y-5 grid-cols-4'>
-                  {items.map((item) => (
-                    <Launcher key={item.name} {...item} />
-                  ))}
+    <main className='text-sm px-5 py-10 lg:px-10 lg:py-20 bg-boxes min-h-screen text-violet-100 bg-black after:fixed after:bg-gradient-to-br after:from-violet-950/50 after:to-indigo-950/50 after:inset-0'>
+      <div className='relative z-10 max-w-screen-xl mx-auto space-y-10 lg:space-y-20'>
+        <section className='sm:flex sm:flex-row-reverse sm:justify-between'>
+          <div className='flex justify-end sm:mt-1.5 mb-10 animate-in duration-700 fade-in-0 slide-in-from-top-20 slide-in-from-right-20'>
+            <Button label="Articles" className='' />
+          </div>
+          <div className='animate-in duration-700 fade-in-0 slide-in-from-top-20 slide-in-from-left-20'>
+            <h1 className='max-w-md lg:max-w-lg leading-loose [&>a]:text-shine [&>a]:underline [&>a]:underline-offset-[5px] [&>a]:decoration-wavy [&>a]:whitespace-nowrap'>
+              I'm Augustin, a fullstack developer based in Yangon. I work at <a href="https://www.codigo.co">Codigo</a> as a front-end
+              developer during day and mini dev projects at night. I won Technical Award at{' '}
+              <a href='https://witaward.com/result/2019#section3'>WIT 2019</a>.
+            </h1>
+            <ul className='flex mt-5'>
+              {contacts.map(({ name, href }, i) => (
+                <li key={name}>
+                  <a
+                    rel="noreferrer"
+                    href={href}
+                    target='_blank'
+                    className='text-violet-100/75 hover:text-white hover:text-shine active:text-shine font-semibold text-xs'
+                  >
+                    {name}
+                  </a>
+                  {i !== contacts.length - 1 && <span className='px-1.5 md:px-2.5 text-violet-200/50'>•</span>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+        <section className='lg:flex lg:flex-row lg:items-start'>
+          <div className='inline-grid gap-x-5 gap-y-10 max-lg:mb-10 sm:grid-cols-2 md:gap-10 lg:grid-cols-1 lg:mr-10 items-start animate-in duration-700 fade-in-0 slide-in-from-bottom-20 slide-in-from-left-20'>
+            <Window title='Dev Projects' className='gap-x-2.5 gap-y-10 py-10 grid-cols-3'>
+              {devprojects.map((project) => (
+                <Launcher key={project.name} {...project} />
+              ))}
+            </Window>
+            <Window title='Tech Stacks' className='px-2.5 py-5 space-y-5'>
+              {techstacks.map(({ name, items }) => (
+                <div key={name}>
+                  <h4 className='text-violet-200/75 text-[0.625rem] uppercase mb-2.5 ml-2.5 font-semibold'>{name}</h4>
+                  <div className='grid gap-5 grid-cols-4'>
+                    {items.map((item) => (
+                      <Launcher key={item.name} {...item} />
+                    ))}
+                  </div>
                 </div>
-              </div>
+              ))}
+            </Window>
+          </div>
+          <div className='grid gap-x-5 gap-y-10 flex-1 sm:grid-cols-2 md:gap-x-10 animate-in duration-700 fade-in-0 slide-in-from-bottom-20 slide-in-from-right-20'>
+            {cdgprojects.map((website) => (
+              <Website key={website.href} sizes={{ sm: '100vw', md: '50vw', lg: '25vw' }} {...website} />
             ))}
-          </Window>
-        </div>
-        <div className='grid grid-cols-2 flex-1 gap-10'>
-          {cdgprojects.map((website) => (
-            <Website key={website.href} {...website} />
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
