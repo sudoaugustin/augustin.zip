@@ -13,7 +13,7 @@ type Props = VariantProps<typeof classes> &
     className?: string;
   };
 
-const classes = cva('flex-center rounded-lg cursor-pointer transition ring-1 backdrop-blur hover:box-shine', {
+const classes = cva('flex-center rounded-lg cursor-pointer transition duration-250 ring-1 backdrop-blur hover:box-shine', {
   variants: {
     size: {
       sm: 'text-xs px-4 h-8 [&>p]:space-x-0.5',
