@@ -14,8 +14,8 @@ const classes = cva('object-cover object-center ease-linear bg-white', {
   variants: {
     state: {
       error: 'cursor-not-allowed',
-      loading: 'scale-95 blur-md animate-pulse',
-      success: 'scale-100 blur-none duration-200',
+      loading: 'opacity-0 blur-md animate-pulse',
+      success: 'opacity-100 blur-none duration-200',
     },
   },
 });
