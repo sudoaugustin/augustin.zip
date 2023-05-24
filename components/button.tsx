@@ -6,7 +6,7 @@ import { ButtonHTMLAttributes, ReactNode } from 'react';
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
 
 type Props = VariantProps<typeof classes> &
-  (LinkProps | ButtonProps) & {
+  (LinkProps<unknown> | ButtonProps) & {
     icon?: ReactNode;
     label: ReactNode;
     inline?: boolean;

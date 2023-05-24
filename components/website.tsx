@@ -9,7 +9,8 @@ export default function Browser({ href, image, timeline, className, ...rest }: P
         {...rest}
         alt={`${image} home page`}
         src={`/images/web-projects/${image}`}
-        size={[1280, 791]}
+        size={[1400, 1200]}
+        priority
         className='ring-4 ring-white/[0.075] rounded-md group-hover:ring-0 group-hover:scale-[1.025]'
       />
 

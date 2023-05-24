@@ -19,20 +19,24 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": ".",
-    "typeRoots": [
-      "./types"
-    ],
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "contentlayer/generated": [
+        "./.contentlayer/generated"
+      ]
+    }
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     "next-env.d.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "app/articles/[slug]",
+    "articles/codes/npm-package-size/pages/framer-motion.jsx"
   ],
   "exclude": [
     "node_modules"

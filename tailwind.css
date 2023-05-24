@@ -2,12 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+a.mapboxgl-ctrl-logo{
+  @apply !hidden;
+}
+
 @layer base {
   
   * {
     -webkit-tap-highlight-color: transparent;
     @apply outline-none focus:outline-none selection:bg-brand-200/25;
   }
+
+  main{
+    @apply text-sm px-5 py-10 space-y-10 lg:px-10 lg:py-20 lg:space-y-20 z-10 relative;
+    section{
+      @apply max-w-screen-xl mx-auto;
+    }
+  }
+
   
   input,
   button,
@@ -44,7 +56,7 @@
 
 @layer utilities{
   .bg-boxes{
-    background-image:  linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.05) 1px, rgba(250, 250, 250, 0) 1px);
+    background-image:  linear-gradient(rgba(167,139,250,0.05) 1px, transparent 1px), linear-gradient(to right, rgba(167,139,250,0.05) 1px, rgba(250, 250, 250, 0) 1px);
     background-size: 50px 50px;
   }
 }

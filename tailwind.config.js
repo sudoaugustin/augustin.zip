@@ -28,6 +28,7 @@ module.exports = {
   plugins: [
     require('tailwindcss-radix'),
     require('tailwindcss-animate'),
+    require('@tailwindcss/typography'),
     plugin(function ({ theme, addUtilities }) {
       addUtilities({
         '.box-shine': {
