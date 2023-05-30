@@ -101,11 +101,11 @@ const cdgprojects = [
     image: 'neuroglee.png',
     timeline: '2022 - Present • codigo',
   },
-  {
-    href: 'trifectasingapore.com',
-    image: 'trifectasingapore.png',
-    timeline: '2023 • codigo',
-  },
+  // {
+  //   href: 'trifectasingapore.com',
+  //   image: 'trifectasingapore.png',
+  //   timeline: '2023 • codigo',
+  // },
   {
     href: 'boulderm.com',
     image: 'boulderm.png',
