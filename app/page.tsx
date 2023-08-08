@@ -102,7 +102,7 @@ const cdgprojects = [
     timeline: '2022 - Present • codigo',
   },
   {
-    href: 'trifectasingapore.com/',
+    href: 'trifectasingapore.com',
     image: 'trifectasingapore.png',
     timeline: '2023 - Present • codigo',
   },
