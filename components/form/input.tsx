@@ -19,7 +19,7 @@ export default function Input({ name, label, prefix, postfix, ...rest }: Props) 
             id={name}
             name={name}
             value={value}
-            className="flex-1 px-3"
+            className='flex-1 px-3'
             onChange={({ target }) => setValue(target.type === 'number' ? target.valueAsNumber : target.value)}
           />
           {postfix ? postfix({ value, error }) : null}
@@ -38,6 +38,7 @@ export function Password(props: Props) {
       type={isShow ? 'password' : 'text'}
       postfix={({ value }) => (
         <button
+          type='button'
           className={`postfix cursor-pointer text-gray-500 [&>svg]:w-5 ${!value && 'hidden'}`}
           onClick={handleToggle}
           onKeyUp={handleToggle}
@@ -45,7 +46,7 @@ export function Password(props: Props) {
           {isShow ? <EyeIcon /> : <EyeSlashIcon />}
         </button>
       )}
-      autoComplete="off"
+      autoComplete='off'
     />
   );
 }

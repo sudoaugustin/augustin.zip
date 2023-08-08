@@ -10,6 +10,10 @@
             "style": {
                 "noImplicitBoolean": "off",
                 "useBlockStatements": "off"
+                
+            },
+            "a11y":{
+                "noSvgWithoutTitle":"off"
             }
         },
         "ignore": [

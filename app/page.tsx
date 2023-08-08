@@ -102,7 +102,7 @@ const cdgprojects = [
     timeline: '2022 - Present • codigo',
   },
   {
-    href: 'trifectasingapore.com',
+    href: 'https://trifectasingapore.com/',
     image: 'trifectasingapore.png',
     timeline: '2023 • codigo',
   },
@@ -119,7 +119,7 @@ export default function AppPage() {
       <section className=''>
         <div className='animate-in duration-500 fade-in-5 slide-in-from-top-20 slide-in-from-left-20'>
           <h1 className='max-w-md lg:max-w-lg leading-loose [&>a]:text-shine [&>a]:underline [&>a]:underline-offset-[5px] [&>a]:decoration-wavy [&>a]:whitespace-nowrap'>
-            I'm Augustin, a fullstack developer based in Yangon. I work at <a href="https://www.codigo.co">Codigo</a> as a front-end
+            I'm Augustin, a fullstack developer based in Yangon. I work at <a href='https://www.codigo.co'>Codigo</a> as a front-end
             developer during day and side projects at night. I won Technical Award at{' '}
             <a href='https://witaward.com/result/2019#section3'>WIT 2019</a>.
           </h1>
@@ -127,7 +127,7 @@ export default function AppPage() {
             {contacts.map(({ name, href }, i) => (
               <li key={name}>
                 <a
-                  rel="noreferrer"
+                  rel='noreferrer'
                   href={href}
                   target='_blank'
                   className='text-violet-100/75 hover:text-white hover:text-shine active:text-shine font-semibold text-xs'
