@@ -84,10 +84,10 @@ const sideprojects = [
     icon: <TailwindTranspiler />,
     link: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailwindcss-transpiler',
   },
-  {
-    name: 'Loading...',
-    icon: <Pascal />,
-  },
+  // {
+  //   name: 'Loading...',
+  //   icon: <Pascal />,
+  // },
 ];
 
 const cdgprojects = [
