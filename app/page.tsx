@@ -104,7 +104,7 @@ const cdgprojects = [
   {
     href: 'https://trifectasingapore.com/',
     image: 'trifectasingapore.png',
-    timeline: '2023 • codigo',
+    timeline: '2023 - Present • codigo',
   },
   {
     href: 'boulderm.com',
