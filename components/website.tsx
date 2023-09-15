@@ -4,12 +4,12 @@ type Props = Omit<ImageProps, 'src'> & { href: string; image: string; timeline: 
 
 export default function Browser({ href, image, timeline, className, ...rest }: Props) {
   return (
-    <a rel="noreferrer" href={`https://${href}`} target='_blank' className={`w-full h-full group ${className}`}>
+    <a rel='noreferrer' href={`https://${href}`} target='_blank' className={`w-full h-full group ${className}`}>
       <Image
         {...rest}
         alt={`${image} home page`}
         src={`/images/web-projects/${image}`}
-        size={[1400, 1200]}
+        size={[720, 600]}
         priority
         className='ring-4 ring-white/[0.075] rounded-md group-hover:ring-0 group-hover:scale-[1.025]'
       />

@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: { brand: colors.sky, error: colors.red },
       boxShadow: { shine: '0 0 2rem #6d28d9, 0 0 0.8rem #6d28d9, 0 0 2.8rem #6d28d9, inset 0 0 1.3rem #6d28d9' },
+      animation: { 'hue-rotate': 'hue-rotate 10s linear infinite' },
       transitionDelay: { 0: '0ms' },
       transitionDuration: { 250: '250ms', 350: '350ms', 400: '400ms' },
     },

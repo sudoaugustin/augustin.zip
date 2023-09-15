@@ -30,32 +30,22 @@ const contacts = [
 ];
 
 const techstacks = [
-  {
-    name: 'Favourites',
-    items: [
-      { name: 'NodeJS', link: 'https://nodejs.org/', icon: <NodeJS /> },
-      { name: 'Typescript', link: 'https://www.typescriptlang.org/', icon: <Typescript /> },
-      { name: 'NextJS', link: 'https://nextjs.org/', icon: <NextJS /> },
-      { name: 'Tailwind', link: 'https://tailwindcss.com/', icon: <TailwindCSS /> },
-      { name: 'Nanostore', link: 'https://github.com/nanostores', icon: <Nanostore /> },
-      { name: 'Radix UI', link: 'https://www.radix-ui.com/', icon: <RadixUI /> },
-      { name: 'Framer Motion', link: 'https://www.framer.com/motion/', icon: <FramerMotion /> },
-      { name: 'ESBuild', link: 'https://esbuild.github.io/', icon: <ESBuild /> },
-      { name: 'Rome', link: 'https://rome.tools/', icon: <Rome /> },
-      { name: 'Jest', link: 'https://jestjs.io/', icon: <Jest /> },
-      { name: 'MongoDB', link: 'https://www.mongodb.com/', icon: <Mongo /> },
-    ],
-  },
-  {
-    name: 'Archives',
-    items: [
-      { name: 'SCSS', link: 'https://sass-lang.com/', icon: <SASS /> },
-      { name: 'Recoil', link: 'https://recoiljs.org/', icon: <Recoil /> },
-      { name: 'Redux', link: 'https://redux.js.org/', icon: <Redux /> },
-      { name: 'Express', link: 'https://expressjs.com/', icon: <Express /> },
-      { name: 'Laravel', link: 'https://laravel.com/', icon: <Laravel /> },
-    ],
-  },
+  { name: 'NodeJS', link: 'https://nodejs.org/', icon: <NodeJS /> },
+  { name: 'Typescript', link: 'https://www.typescriptlang.org/', icon: <Typescript /> },
+  { name: 'NextJS', link: 'https://nextjs.org/', icon: <NextJS /> },
+  { name: 'Tailwind', link: 'https://tailwindcss.com/', icon: <TailwindCSS /> },
+  { name: 'Nanostore', link: 'https://github.com/nanostores', icon: <Nanostore /> },
+  { name: 'Radix UI', link: 'https://www.radix-ui.com/', icon: <RadixUI /> },
+  { name: 'Framer Motion', link: 'https://www.framer.com/motion/', icon: <FramerMotion /> },
+  { name: 'ESBuild', link: 'https://esbuild.github.io/', icon: <ESBuild /> },
+  { name: 'Rome', link: 'https://rome.tools/', icon: <Rome /> },
+  { name: 'Jest', link: 'https://jestjs.io/', icon: <Jest /> },
+  { name: 'MongoDB', link: 'https://www.mongodb.com/', icon: <Mongo /> },
+  { name: 'SCSS', link: 'https://sass-lang.com/', icon: <SASS /> },
+  { name: 'Recoil', link: 'https://recoiljs.org/', icon: <Recoil /> },
+  { name: 'Redux', link: 'https://redux.js.org/', icon: <Redux /> },
+  { name: 'Express', link: 'https://expressjs.com/', icon: <Express /> },
+  { name: 'Laravel', link: 'https://laravel.com/', icon: <Laravel /> },
 ];
 
 const sideprojects = [
@@ -84,17 +74,18 @@ const sideprojects = [
     icon: <TailwindTranspiler />,
     link: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailwindcss-transpiler',
   },
-  // {
-  //   name: 'Loading...',
-  //   icon: <Pascal />,
-  // },
 ];
 
 const cdgprojects = [
   {
-    href: 'codigo.co',
-    image: 'codigo.png',
-    timeline: '2022 - Present • codigo',
+    href: 'techforhire.dev',
+    image: 'techforhire.png',
+    timeline: '2023 - Present • codigo',
+  },
+  {
+    href: 'trifectasingapore.com',
+    image: 'trifectasingapore.png',
+    timeline: '2023 - Present • codigo',
   },
   {
     href: 'neuroglee.com',
@@ -102,9 +93,9 @@ const cdgprojects = [
     timeline: '2022 - Present • codigo',
   },
   {
-    href: 'trifectasingapore.com',
-    image: 'trifectasingapore.png',
-    timeline: '2023 - Present • codigo',
+    href: 'codigo.co',
+    image: 'codigo.png',
+    timeline: '2022 - Present • codigo',
   },
   {
     href: 'boulderm.com',
@@ -141,26 +132,19 @@ export default function AppPage() {
         </div>
       </section>
       <section className='lg:flex lg:flex-row lg:items-start'>
-        <div className='inline-grid gap-x-5 gap-y-10 max-lg:mb-10 sm:grid-cols-2 md:gap-10 lg:grid-cols-1 lg:mr-10 items-start animate-in duration-500 fade-in-5 slide-in-from-bottom-20 slide-in-from-left-20'>
+        <div className='inline-grid gap-x-5 gap-y-10 max-lg:mb-10 sm:grid-cols-2 xl:gap-10 lg:grid-cols-1 lg:mr-5 xl:mr-10 items-start animate-in duration-500 fade-in-5 slide-in-from-bottom-20 slide-in-from-left-20'>
           <Window title='Side Projects' className='gap-x-2.5 gap-y-10 py-10 grid-cols-3'>
             {sideprojects.map((project) => (
               <Launcher key={project.name} {...project} />
             ))}
           </Window>
-          <Window title='Tech Stacks' className='px-2.5 py-5 space-y-5'>
-            {techstacks.map(({ name, items }) => (
-              <div key={name}>
-                <p className='text-violet-200/75 text-[0.625rem] uppercase mb-2.5 ml-2.5 font-semibold'>{name}</p>
-                <div className='grid gap-5 grid-cols-4'>
-                  {items.map((item) => (
-                    <Launcher key={item.name} {...item} />
-                  ))}
-                </div>
-              </div>
+          <Window title='Tech Stacks' className='px-2.5 py-5 gap-5 grid-cols-4'>
+            {techstacks.map((techstack) => (
+              <Launcher key={techstack.name} {...techstack} />
             ))}
           </Window>
         </div>
-        <div className='flex-1 grid gap-x-5 gap-y-10 sm:grid-cols-2 md:gap-x-10 animate-in duration-500 fade-in-5 slide-in-from-bottom-20 slide-in-from-right-20'>
+        <div className='flex-1 grid gap-x-5 gap-y-10 sm:grid-cols-2 xl:gap-x-10 xl:grid-cols-3 animate-in duration-500 fade-in-5 slide-in-from-bottom-20 slide-in-from-right-20'>
           {cdgprojects.map((website) => (
             <Website key={website.href} sizes={{ sm: '50vw' }} {...website} />
           ))}

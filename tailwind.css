@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-a.mapboxgl-ctrl-logo{
-  @apply !hidden;
-}
 
 @layer base {
   
@@ -16,7 +13,7 @@ a.mapboxgl-ctrl-logo{
   main{
     @apply text-sm px-5 py-10 space-y-10 lg:px-10 lg:py-20 lg:space-y-20 z-10 relative;
     section{
-      @apply max-w-screen-xl mx-auto;
+      @apply max-w-screen-2xl mx-auto;
     }
   }
 
@@ -58,5 +55,14 @@ a.mapboxgl-ctrl-logo{
   .bg-boxes{
     background-image:  linear-gradient(rgba(167,139,250,0.05) 1px, transparent 1px), linear-gradient(to right, rgba(167,139,250,0.05) 1px, rgba(250, 250, 250, 0) 1px);
     background-size: 50px 50px;
+  }
+}
+
+@keyframes hue-rotate{
+  0%{
+    filter: hue-rotate(0);
+  }
+  100%{
+    filter: hue-rotate(360deg);
   }
 }
