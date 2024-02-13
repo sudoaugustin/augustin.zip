@@ -1,8 +1,8 @@
 import 'index.css';
-import { Manrope } from 'next/font/google';
+import { Onest } from 'next/font/google';
 import { ReactNode } from 'react';
 
-const sans = Manrope({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
+const sans = Onest({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 
 type Props = {
   children: ReactNode;
