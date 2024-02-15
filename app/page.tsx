@@ -10,13 +10,13 @@ const contacts = [
 const techstacks = [
   { name: 'NodeJS' },
   { name: 'NextJS' },
+  { name: 'React Native' },
   { name: 'Typescript' },
   { name: 'Tailwind' },
   { name: 'SCSS' },
   { name: 'ESBuild' },
   { name: 'MongoDB' },
   { name: 'Laravel' },
-  { name: 'Jest' },
 ];
 
 const awards = [{ name: 'Technical Award', href: 'https://witaward.com/result/2019', competition: 'WIT 2019' }];
@@ -81,23 +81,7 @@ export default function AppPage() {
       <div>
         <h2 className="font-bold mb-1.5 text-base">Work</h2>
         <p>
-          I'm nerding as a frontend(<i>front-end</i>) developer at Codigo SG since 2022. I build a bunch of client websites like{' '}
-          <a href="https://www.trifectasingapore.com" className="shine">
-            trifectasingapore.com
-          </a>
-          ,{' '}
-          <a href="https://www.neuroglee.com" className="shine">
-            neuroglee.com
-          </a>{' '}
-          and our company's own websites like{' '}
-          <a href="https://www.techforhire.dev" className="shine">
-            techforhire.dev
-          </a>
-          ,{' '}
-          <a href="https://www.codigo.co" className="shine">
-            codigo.co
-          </a>
-          .
+          I'm nerding as a frontend(<i>front-end</i>) developer at Codigo SG since 2022.
         </p>
       </div>
       <div>

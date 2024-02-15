@@ -1,8 +1,8 @@
 import 'index.css';
-import { Onest } from 'next/font/google';
+import { Rethink_Sans } from 'next/font/google';
 import { ReactNode } from 'react';
 
-const sans = Onest({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
+const sans = Rethink_Sans({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 
 type Props = {
   children: ReactNode;
