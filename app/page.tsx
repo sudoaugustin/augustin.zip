@@ -42,6 +42,14 @@ const education = [
   },
 ];
 
+const websites = [
+  { name: 'techforhire.dev', link: 'https://techforhire.dev/' },
+  { name: 'neuroglee.com', link: 'https://neuroglee.com/' },
+  { name: 'codigo.co', link: 'https://www.codigo.co/' },
+  { name: 'boulderm.com', link: 'https://boulderm.com/' },
+  { name: 'trifectasingapore.com', link: 'https://trifectasingapore.com/' },
+];
+
 const sideprojects = [
   {
     name: 'Supex',
@@ -87,14 +95,21 @@ export default function AppPage() {
       <div>
         <h2 className="font-bold mb-1.5 text-base">Work</h2>
         <p>
-          I'm nerding as a frontend(<i>front-end</i>) developer at Codigo SG since 2022.
+          I'm nerding as a frontend(<i>front-end</i>) developer at Codigo SG since 2022. Since then, I have built
         </p>
+        <div className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
+          {websites.map(({ name, link }) => (
+            <a key={name} href={link} className="block ">
+              <span className="mr-0.5 inline-block">-</span> <span className="shine">{name}</span>
+            </a>
+          ))}
+        </div>
       </div>
       <div>
         <h2 className="font-bold mb-1.5 text-base">Side Projects</h2>
         <p>
           Although my main profession is frontend development, I'm not limited to that. Because of my interest in developer experience, I
-          build small dev tools during my free time. So far I have build:
+          build small dev tools during my free time. So far I have built:
         </p>
         <div className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
           {sideprojects.map(({ name, href, label, active }) => (
