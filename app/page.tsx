@@ -44,7 +44,7 @@ const education = [
 
 const websites = [
   { name: 'techforhire.dev', link: 'https://techforhire.dev/' },
-  { name: 'neuroglee.com', link: 'https://neuroglee.com/' },
+  // { name: 'neuroglee.com', link: 'https://neuroglee.com/' },
   { name: 'codigo.co', link: 'https://www.codigo.co/' },
   { name: 'boulderm.com', link: 'https://boulderm.com/' },
   { name: 'trifectasingapore.com', link: 'https://trifectasingapore.com/' },
