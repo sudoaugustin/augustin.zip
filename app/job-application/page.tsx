@@ -23,25 +23,24 @@ export default function Page() {
       </p>
       <br /> <br />
       <p>
-        <i>Adam:</i> OK! I'm listening.
+        <i>Adam:</i> OK! Tell me about your self
       </p>
       <p>
-        <i>Augustin:</i> About me. I got first introduced to programming at my first year of university when I'm about 16. Before that, I
-        don't know what is programming or how the programs were created.
+        <i>Augustin:</i> I got first introduced to programming at my first year of university when I'm about 16. Before that, I don't know
+        what is programming or how the programs were created.
         <br /> <br />
-        My first language was <b>C++</b>(I forgot the syntax now, only JS, TS is flowing through my veins). My first project was password
-        manager with C++ for my academic.
-        <br /> <br />I learned <b>Java(the nightmare)</b> and <b>Javascript</b> at my 2nd year of university. The odd thing is I didn't like
-        Javascript at first, my first love was <b>PHP</b>. I was very interested in payment systems during that time, so I competed in a web
-        competition held by Japan company and won Technical Award(https://witaward.com/result/2019). After that I learned about payment
-        methods and difference between cash usage in Europe and Asia. I'm also familiar with <b>Laravel</b> to a basic level.
+        My first language was <b>C++</b> and my first project was password manager with C++ for my academic.
+        <br /> <br />I learned <b>Java(the nightmare)</b> and <b>Javascript</b> at my 2nd year of university. I didn't like Javascript at
+        first, my first love was <b>PHP</b>. I was very interested in payment systems during that time, so I competed in a web competition
+        held by Japan company and won Technical Award(https://witaward.com/result/2019). After that I learned about payment methods and
+        difference between cash usage in Europe and Asia. I'm also familiar with <b>Laravel</b> to a basic level.
         <br /> <br />I learned <b>React</b> and <b>NodeJS</b> during covid period. I got my first job as a frontend developer in a Singapore
-        company 2years ago with NextJS. At my job, I primarily work on client projects and during free office hours, our frontend team work
-        on <b>nextjs boilerplate</b>.
+        company 2years ago with NextJS. I primarily work on frontend development. During free office hours, I monitor and create guidelines
+        to write clean code and develop a <b>nextjs boilerplate</b> with my team.
       </p>
       <br /> <br />
       <p>
-        <i>Adam:</i> Could you tell me about some of the projects you are proud of.
+        <i>Adam:</i> Could you tell me about some of the projects you are proud of?
       </p>
       <p>
         <i>Augustin:</i> Well, I have three.
@@ -83,6 +82,16 @@ export default function Page() {
         https://www.augustin.zip/
       </a>
       .
+      <br /> <br />
+      <p>
+        <i>Adam: </i> What excite you most about the job?
+        <p>
+          <i>Augustin: </i> I applied for both Design Engineer and Staff Engineer roles. Other than frontend development, I also have
+          experience with developing NPM packages and VSCode extensions. I love to work on anything whether it's converting Steve's UI into
+          code for Tailwind UI or the new Catalyst project. Why don't we develop a VSCode extension which will help people to use Catalyst
+          without leaving VSCode? I would also love to hear your plans about HeadlessUI as well.
+        </p>
+      </p>
       <br /> <br />
       <p>
         <i>Adam:</i> Do you wanna add something to this application?

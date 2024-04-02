@@ -25,7 +25,7 @@ const education = [
   {
     year: '2023',
     href: 'https://www.nccedu.com/qualifications/computing/ncc-education-level-5-diploma-in-computing-l5dc/',
-    course: 'Level 5 Diploma in Computing',
+    course: 'Diploma in Computing',
     university: 'NCC Education',
   },
   {
@@ -40,14 +40,6 @@ const education = [
     course: '1st Year',
     university: 'The University of Information Technology(Yangon)',
   },
-];
-
-const websites = [
-  { name: 'techforhire.dev', link: 'https://techforhire.dev/' },
-  // { name: 'neuroglee.com', link: 'https://neuroglee.com/' },
-  { name: 'codigo.co', link: 'https://www.codigo.co/' },
-  { name: 'boulderm.com', link: 'https://boulderm.com/' },
-  { name: 'trifectasingapore.com', link: 'https://trifectasingapore.com/' },
 ];
 
 const sideprojects = [
@@ -95,15 +87,8 @@ export default function AppPage() {
       <div>
         <h2 className="font-bold mb-1.5 text-base">Work</h2>
         <p>
-          I'm nerding as a frontend(<i>front-end</i>) developer at Codigo SG since 2022. Since then, I have built
+          I'm nerding as a frontend(<i>front-end</i>) developer at Codigo SG since 2022.
         </p>
-        <div className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
-          {websites.map(({ name, link }) => (
-            <a key={name} href={link} className="block ">
-              <span className="mr-0.5 inline-block">-</span> <span className="shine">{name}</span>
-            </a>
-          ))}
-        </div>
       </div>
       <div>
         <h2 className="font-bold mb-1.5 text-base">Side Projects</h2>
