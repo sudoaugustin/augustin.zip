@@ -65,8 +65,8 @@ const sideprojects = [
     label: 'NPM package',
   },
   {
-    name: 'Favecon',
-    href: 'https://www.npmjs.com/package/favecon',
+    name: 'Favicon-pro',
+    href: 'https://www.npmjs.com/package/favicon-pro',
     label: 'NPM package',
   },
   {
