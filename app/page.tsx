@@ -47,7 +47,6 @@ const sideprojects = [
     name: 'Supex',
     href: 'https://supex.dev/',
     label: 'NPM package',
-    active: true,
   },
   {
     name: 'VSLook',
