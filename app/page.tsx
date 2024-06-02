@@ -96,15 +96,10 @@ export default function AppPage() {
           build small dev tools during my free time. So far I have built:
         </p>
         <div className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
-          {sideprojects.map(({ name, href, label, active }) => (
+          {sideprojects.map(({ name, href, label }) => (
             <a key={name} href={href} className="block">
               <span className="mr-0.5 inline-block">-</span> <span className="shine">{name}</span>{' '}
               <span className="text-slate-100/50">{`[${label}]`}</span>
-              {active && (
-                <span className="inline-flex bg-slate-100 rounded-full px-2 py-0.5 text-slate-900 text-xs font-bold ml-2">
-                  Actively working
-                </span>
-              )}
             </a>
           ))}
         </div>
