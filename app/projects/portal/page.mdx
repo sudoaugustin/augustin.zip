@@ -1,0 +1,22 @@
+# Portal
+
+
+<iframe width="635" height="355" src="https://www.youtube.com/embed/EAgzj7Sgyc0?si=BsQTKPdc1ODxQl7I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="w-full border border-slate-900 rounded-md"></iframe>
+
+Transform useless new tabs into a mini browser by embedding real websites instead of shortcut icons. With Portal, you can embed your favorite day-to-day websites in the new tab. It's like a design tool except you are drawing & embedding a live website. You can also adjust the size and position of the websites. So when you want a specific breakpoint of a website, you don't have to minimize your window anymore.
+
+
+## Links
+- [Github]()
+- [Firefox]()
+- [Chrome]()
+
+## Security
+
+- Portal is safe to use and doesn't collect any user data.
+- Portal overrides some network requests to embed a live website in a safer way using [declarativeNetRequest](https://developer.chrome.com/docs/extensions/reference/api/declarativeNetRequest#:~:text=declarativeNetRequest%20API%20is%20used%20to,content%2C%20thus%20providing%20more%20privacy.).
+- Portal ensures the network requests are overridden only in the new tab(empty url page) and doesn't effect your other web pages.
+
+## Notes
+
+- Although Portal overrides network requests, some websites use javascript to detect if it's embedded. Portal may not work well with those websites.

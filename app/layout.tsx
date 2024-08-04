@@ -1,6 +1,6 @@
-import 'index.css';
 import { Rethink_Sans } from 'next/font/google';
-import { ReactNode } from 'react';
+import 'index.css';
+import type { ReactNode } from 'react';
 
 const sans = Rethink_Sans({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 
@@ -10,19 +10,12 @@ type Props = {
 
 export default function AppLayout({ children }: Props) {
   return (
-    <html lang="en" className={`${sans.variable} font-sans text-white bg-black`}>
+    <html lang="en" className={`${sans.variable} font-sans text-slate-200 bg-slate-950`}>
       <head>
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
       </head>
-      <body className="bg-gradient-to-br from-slate-500/50 to-slate-700/50 text-sm relative">
+      <body className="text-sm max-w-2xl mx-auto px-5 py-10 lg:py-20 hover:[&_a]:underline animate-in duration-500 fade-in-5 slide-in-from-bottom-5">
         {children}
-        <svg className="hidden">
-          <title>Noise</title>
-          <filter id="noise">
-            <feTurbulence type="turbulence" baseFrequency={0.5} />
-          </filter>
-        </svg>
-        <i style={{ filter: 'url(#noise)' }} className="absolute inset-0 w-full h-full mix-blend-multiply" />
       </body>
     </html>
   );

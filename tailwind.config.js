@@ -11,9 +11,10 @@ module.exports = {
       serif: ['var(--font-serif)', ...fontFamily.serif],
     },
   },
-  content: ['./app/**/*.{ts,tsx}'],
+  content: ['./app/**/*.{ts,tsx,mdx}'],
   plugins: [
     require('tailwindcss-animate'),
+    require('@tailwindcss/typography'),
     plugin(({ addUtilities }) => {
       addUtilities({
         '.flex-center': {

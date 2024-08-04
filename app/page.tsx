@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 const contacts = [
   { name: 'Github', href: 'https://github.com/sudoaugustin' },
@@ -44,74 +44,64 @@ const education = [
 
 const sideprojects = [
   {
-    name: 'Supex',
+    name: 'portal',
+    href: '/projects/portal',
+  },
+  {
+    name: 'qr-x',
+    href: 'https://github.com/devtrice/qr-x',
+  },
+  {
+    name: 'supex',
     href: 'https://supex.dev/',
-    label: 'NPM package',
-    active: true,
   },
   {
-    name: 'VSLook',
+    name: 'vslook',
     href: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.vslook',
-    label: 'VSCode extension',
   },
   {
-    name: 'Tailpile',
+    name: 'tailpile',
     href: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailpile',
-    label: 'VSCode extension',
   },
   {
-    name: 'Renex',
+    name: 'renex',
     href: 'https://www.npmjs.com/package/renex',
-    label: 'NPM package',
   },
   {
-    name: 'Favicon-pro',
+    name: 'favicon-pro',
     href: 'https://www.npmjs.com/package/favicon-pro',
-    label: 'NPM package',
   },
   {
-    name: 'Tailwind Transpiler',
+    name: 'tailwind-transpiler',
     href: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailwindcss-transpiler',
-    label: 'VSCode extension',
   },
 ];
 
 export default function AppPage() {
   return (
-    <main className="max-w-2xl mx-auto px-5 py-10 space-y-5 lg:py-20 lg:space-y-10 z-10 relative hover:[&_a]:underline animate-in duration-500 fade-in-5 slide-in-from-bottom-5">
+    <main className="space-y-5 lg:space-y-10">
       <h1>
         Hey!
-        <br />
-        I'm <strong>Augustin Joseph</strong>, a fullstack developer from south east asia. You can also call me <i>Aung Bo Bo Tun</i>.
+        <br /> <br />
+        I'm <strong>Augustin Joseph</strong>, a fullstack engineer from south east asia. You can also call me <i>Aung Bo Bo Tun</i>. I'm
+        working as a senior frontend engineer at Codigo SG since 2022.
       </h1>
       <div>
-        <h2 className="font-bold mb-1.5 text-base">Work</h2>
-        <p>
-          I'm nerding as a frontend(<i>front-end</i>) developer at Codigo SG since 2022.
-        </p>
-      </div>
-      <div>
         <h2 className="font-bold mb-1.5 text-base">Side Projects</h2>
-        <p>
-          Although my main profession is frontend development, I'm not limited to that. Because of my interest in developer experience, I
-          build small dev tools during my free time. So far I have built:
-        </p>
-        <div className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
-          {sideprojects.map(({ name, href, label, active }) => (
-            <a key={name} href={href} className="block">
-              <span className="mr-0.5 inline-block">-</span> <span className="shine">{name}</span>{' '}
-              <span className="text-slate-100/50">{`[${label}]`}</span>
-              {active && (
-                <span className="inline-flex bg-slate-100 rounded-full px-2 py-0.5 text-slate-900 text-xs font-bold ml-2">
-                  Actively working
-                </span>
-              )}
-            </a>
+        <p>I build small tools during my free time. So far I have built:</p>
+        <ul className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
+          {sideprojects.map(({ name, href }) => (
+            <li key={name} className="block">
+              -{' '}
+              <a href={href} className="shine">
+                {name}
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
       <div>
-        <h2 className="font-bold mb-1.5 text-base">Award</h2>
+        <h2 className="font-bold mb-1.5 text-base">Achievements</h2>
         <div className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
           {awards.map(({ name, href, competition }) => (
             <a key={name} href={href} className="block">
@@ -135,7 +125,7 @@ export default function AppPage() {
         </div>
       </div>
       <div>
-        <h2 className="font-bold mb-1.5 text-base">Tech Stacks</h2>
+        <h2 className="font-bold mb-1.5 text-base">Tech Stack</h2>
         <ul className="list-inside mt-2.5 mb-5 gap-2.5 text-slate-100 list-disc grid grid-cols-3">
           {techstacks.map(({ name }) => (
             <li key={name}>{name}</li>
@@ -157,6 +147,6 @@ export default function AppPage() {
 }
 
 export const metadata: Metadata = {
-  title: 'Augustin - Fullstack developer',
-  description: 'A fullstack developer based in Yangon. Work at Codigo as a front-end developer and won Technical Award at WIT 2019',
+  title: 'Augustin - Fullstack engineer',
+  description: 'A fullstack engineer based in Yangon. Work at Codigo as a front-end engineer and won Technical Award at WIT 2019',
 };
