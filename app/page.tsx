@@ -42,6 +42,34 @@ const education = [
   },
 ];
 
+const cdgprojects = [
+  {
+    name: 'codigo.co',
+    href: 'https://codigo.co/',
+    tags: ['Frontend Lead', 'AWS SES', 'Server Maintaince'],
+  },
+  {
+    name: 'techforhire.dev',
+    href: 'https://techforhire.dev/',
+    tags: ['Frontend Lead', 'AWS SES', 'Server Maintaince'],
+  },
+  {
+    name: 'trifectasingapore.com',
+    href: 'https://trifectasingapore.com/',
+    tags: ['Frontend Lead', 'Server Maintaince'],
+  },
+  {
+    name: 'neuroglee.com',
+    href: 'https://www.neuroglee.com/',
+    tags: ['Frontend Lead', 'Server Maintaince'],
+  },
+  {
+    name: 'boulderm.com',
+    href: 'https://boulderm.com/',
+    tags: ['Frontend Support'],
+  },
+];
+
 const sideprojects = [
   {
     name: 'portal',
@@ -75,6 +103,10 @@ const sideprojects = [
     name: 'tailwind-transpiler',
     href: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailwindcss-transpiler',
   },
+  {
+    name: 'nextjs-boilerplate',
+    href: 'https://github.com/sudoaugustin/nextjs-boilerplate',
+  },
 ];
 
 export default function AppPage() {
@@ -86,6 +118,21 @@ export default function AppPage() {
         I'm <strong>Augustin Joseph</strong>, a fullstack engineer from south east asia. You can also call me <i>Aung Bo Bo Tun</i>. I'm
         working as a senior frontend engineer at Codigo SG since 2022.
       </h1>
+      <div>
+        <h2 className="font-bold mb-1.5 text-base">Codigo Projects</h2>
+        <p>Within my 2+ years in codigo, I built these websites from scratch with colleagues</p>
+        <ul className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
+          {cdgprojects.map(({ name, tags, href }) => (
+            <li key={name} className="block">
+              -{' '}
+              <a href={href} target="_blank" className="shine" rel="noreferrer">
+                {name}
+              </a>
+              <p className="ml-2.5">{tags.join(' / ')}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div>
         <h2 className="font-bold mb-1.5 text-base">Side Projects</h2>
         <p>I build small tools during my free time. So far I have built:</p>
@@ -116,7 +163,7 @@ export default function AppPage() {
         <h2 className="font-bold mb-1.5 text-base">Education</h2>
         <div className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
           {education.map(({ year, href, course, university }) => (
-            <a key={course} href={href} className="block">
+            <a key={course} href={href} target="_blank" className="block" rel="noreferrer">
               <b className="inline-block w-8 font-semibold">{year}</b> - <span className="shine">{course}</span>
               {' at '}
               {university}
