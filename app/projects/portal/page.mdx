@@ -11,12 +11,20 @@ Transform useless new tabs into a mini browser by embedding real websites instea
 - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/web-portal/)
 - [Chrome](https://chromewebstore.google.com/detail/portal/edgabbnbdacnalfdbabbcpphbkcfpgid)
 
-## Security
+## Notes
 
 - Portal is safe to use and doesn't collect any user data.
 - Portal overrides some network requests to embed a live website in a safer way using [declarativeNetRequest](https://developer.chrome.com/docs/extensions/reference/api/declarativeNetRequest#:~:text=declarativeNetRequest%20API%20is%20used%20to,content%2C%20thus%20providing%20more%20privacy.).
 - Portal ensures the network requests are overridden only in the new tab(empty url page) and doesn't effect your other web pages.
-
-## Notes
-
 - Although Portal overrides network requests, some websites use javascript to detect if it's embedded. Portal may not work well with those websites.
+
+## Arc Support
+
+Since Arc is first of it's kind, please follow the steps to use Portal on Arc after your installtaion.
+
+1. Pin the Portal's action button like below
+![Portal in Arc](/images/portal/pin-portal.png)
+
+<br/>
+2. Eveytime you want to open Portal, click on the action.
+![Click Portal action button](/images/portal/click-portal.png)
