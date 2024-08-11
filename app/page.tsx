@@ -46,22 +46,22 @@ const cdgprojects = [
   {
     name: 'codigo.co',
     href: 'https://codigo.co/',
-    tags: ['Frontend Lead', 'AWS SES', 'Server Maintaince'],
+    tags: ['Frontend Lead', 'AWS SES', 'Server Maintenance'],
   },
   {
     name: 'techforhire.dev',
     href: 'https://techforhire.dev/',
-    tags: ['Frontend Lead', 'AWS SES', 'Server Maintaince'],
+    tags: ['Frontend Lead', 'AWS SES', 'Server Maintenance'],
   },
   {
     name: 'trifectasingapore.com',
     href: 'https://trifectasingapore.com/',
-    tags: ['Frontend Lead', 'Server Maintaince'],
+    tags: ['Frontend Lead', 'Server Maintenance'],
   },
   {
     name: 'neuroglee.com',
     href: 'https://www.neuroglee.com/',
-    tags: ['Frontend Lead', 'Server Maintaince'],
+    tags: ['Frontend Lead', 'Server Maintenance'],
   },
   {
     name: 'boulderm.com',
@@ -115,11 +115,11 @@ export default function AppPage() {
       <h1>
         Hey!
         <br /> <br />
-        I'm <strong>Augustin Joseph</strong>, a fullstack engineer from south east asia. You can also call me <i>Aung Bo Bo Tun</i>. I'm
-        working as a senior frontend engineer at Codigo SG since 2022.
+        I'm Augustin Joseph, a fullstack engineer from south east asia. You can also call me <i>Aung Bo Bo Tun</i>. I'm working as a senior
+        frontend engineer at Codigo SG since 2022.
       </h1>
       <div>
-        <h2 className="font-bold mb-1.5 text-base">Codigo Projects</h2>
+        <h2 className="font-medium mb-1.5 text-base">Codigo Projects</h2>
         <p>Within my 2+ years in codigo, I built these websites from scratch with colleagues</p>
         <ul className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
           {cdgprojects.map(({ name, tags, href }) => (
@@ -128,13 +128,13 @@ export default function AppPage() {
               <a href={href} target="_blank" className="shine" rel="noreferrer">
                 {name}
               </a>
-              <p className="ml-2.5">{tags.join(' / ')}</p>
+              <p className="ml-2.5 font-light">{tags.join(' / ')}</p>
             </li>
           ))}
         </ul>
       </div>
       <div>
-        <h2 className="font-bold mb-1.5 text-base">Side Projects</h2>
+        <h2 className="font-medium mb-1.5 text-base">Side Projects</h2>
         <p>I build small tools during my free time. So far I have built:</p>
         <ul className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
           {sideprojects.map(({ name, href }) => (
@@ -148,7 +148,7 @@ export default function AppPage() {
         </ul>
       </div>
       <div>
-        <h2 className="font-bold mb-1.5 text-base">Achievements</h2>
+        <h2 className="font-medium mb-1.5 text-base">Achievements</h2>
         <div className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
           {awards.map(({ name, href, competition }) => (
             <a key={name} href={href} className="block">
@@ -160,11 +160,11 @@ export default function AppPage() {
         </div>
       </div>
       <div>
-        <h2 className="font-bold mb-1.5 text-base">Education</h2>
+        <h2 className="font-medium mb-1.5 text-base">Education</h2>
         <div className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
           {education.map(({ year, href, course, university }) => (
             <a key={course} href={href} target="_blank" className="block" rel="noreferrer">
-              <b className="inline-block w-8 font-semibold">{year}</b> - <span className="shine">{course}</span>
+              <b className="inline-block w-9 font-medium">{year}</b> - <span className="shine">{course}</span>
               {' at '}
               {university}
             </a>
@@ -172,7 +172,7 @@ export default function AppPage() {
         </div>
       </div>
       <div>
-        <h2 className="font-bold mb-1.5 text-base">Tech Stack</h2>
+        <h2 className="font-medium mb-1.5 text-base">Tech Stack</h2>
         <ul className="list-inside mt-2.5 mb-5 gap-2.5 text-slate-100 list-disc grid grid-cols-3">
           {techstacks.map(({ name }) => (
             <li key={name}>{name}</li>
@@ -180,7 +180,7 @@ export default function AppPage() {
         </ul>
       </div>
       <div>
-        <h2 className="font-bold mb-1.5 text-base">Contact Me Via</h2>
+        <h2 className="font-medium mb-1.5 text-base">Contact Me Via</h2>
         <div className="list-inside mt-2.5 mb-5 gap-2.5 text-slate-100 list-disc grid grid-cols-3 sm:grid-cols-4">
           {contacts.map(({ name, href }) => (
             <a key={name} href={href} className="shine">

@@ -1,8 +1,8 @@
-import { Rethink_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
 import 'index.css';
 import type { ReactNode } from 'react';
 
-const sans = Rethink_Sans({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
+const sans = localFont({ src: './ClashGrotesk-Variable.woff2', variable: '--font-sans', display: 'swap' });
 
 type Props = {
   children: ReactNode;
