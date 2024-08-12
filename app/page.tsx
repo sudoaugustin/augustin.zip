@@ -19,7 +19,14 @@ const techstacks = [
   { name: 'Laravel' },
 ];
 
-const awards = [{ name: 'Technical Award', href: 'https://witaward.com/result/2019', competition: 'WIT 2019' }];
+const awards = [
+  { name: 'Technical Award', href: 'https://witaward.com/result/2019', competition: 'WIT 2019' },
+  {
+    name: 'Best Employee Award',
+    href: 'https://www.linkedin.com/posts/codigo-pte-ltd_hey-there-awesome-myanmar-codigo-rezeve-activity-7146663689310396416-zNu8?utm_source=share&utm_medium=member_desktop',
+    competition: 'Codigo 2023',
+  },
+];
 
 const education = [
   {
@@ -140,7 +147,7 @@ export default function AppPage() {
           {sideprojects.map(({ name, href }) => (
             <li key={name} className="block">
               -{' '}
-              <a href={href} className="shine">
+              <a href={href} target="_blank" className="shine" rel="noreferrer">
                 {name}
               </a>
             </li>
@@ -151,7 +158,7 @@ export default function AppPage() {
         <h2 className="font-medium mb-1.5 text-base">Achievements</h2>
         <div className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
           {awards.map(({ name, href, competition }) => (
-            <a key={name} href={href} className="block">
+            <a key={name} href={href} target="_blank" className="block" rel="noreferrer">
               <span className="mr-0.5 inline-block">-</span> <span className="shine">{name}</span>
               {' at '}
               {competition}
@@ -183,7 +190,7 @@ export default function AppPage() {
         <h2 className="font-medium mb-1.5 text-base">Contact Me Via</h2>
         <div className="list-inside mt-2.5 mb-5 gap-2.5 text-slate-100 list-disc grid grid-cols-3 sm:grid-cols-4">
           {contacts.map(({ name, href }) => (
-            <a key={name} href={href} className="shine">
+            <a key={name} href={href} target="_blank" className="shine" rel="noreferrer">
               {name}
             </a>
           ))}
