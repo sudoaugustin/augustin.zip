@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import Profile from './icon.png';
 
 const contacts = [
   { name: 'Github', href: 'https://github.com/sudoaugustin' },
@@ -119,12 +121,15 @@ const sideprojects = [
 export default function AppPage() {
   return (
     <main className="space-y-5 lg:space-y-10">
-      <h1>
-        Hey!
-        <br /> <br />
-        I'm Augustin Joseph, a fullstack engineer from south east asia. You can also call me <i>Aung Bo Bo Tun</i>. I'm working as a senior
-        frontend engineer at Codigo SG since 2022.
-      </h1>
+      <div>
+        <Image src={Profile} alt="My Face" className="size-10 rounded-md" />
+        <h1 className="mt-2.5 lg:mt-5">
+          Hello There!
+          <br />
+          I'm Augustin Joseph, a fullstack engineer from south east asia. You can also call me <i>Aung Bo Bo Tun</i>. I'm working as a
+          senior frontend engineer at Codigo SG since 2022.
+        </h1>
+      </div>
       <div>
         <h2 className="font-medium mb-1.5 text-base">Codigo Projects</h2>
         <p>Within my 2+ years in codigo, I built these websites from scratch with colleagues</p>
