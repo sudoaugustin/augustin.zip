@@ -3,13 +3,19 @@
 
 <iframe width="635" height="355" src="https://www.youtube.com/embed/M8FAdLhr4pk?si=UZQKceuydqwqYnAD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="w-full border border-slate-900 rounded-md"></iframe>
 
-Supercharge browser New Tab by embedding real websites instead of shortcut icons. Portal lets you embed your favorite day-to-day websites in New Tab. You can also adjust the size and position of the website easily. So when you want a specific breakpoint of a website, you don't have exit full screen to minimize your window anymore. It's like a design tool but you are drawing & embedding live websites. 
-
+Supercharge browser New Tab by embedding real websites instead of shortcut icons. Portal lets you embed your favorite day-to-day websites in New Tab. You can also adjust the size and position of the website easily. So when you want a specific breakpoint of a website, you don't have exit full screen to minimize your window anymore. It's like a design tool but you are drawing & embedding live websites. For feedbacks, please contact [here](https://x.com/sudoaugustin).
 
 ## Downloads
 
 - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/web-portal/)
 - [Chrome](https://chromewebstore.google.com/detail/portal/edgabbnbdacnalfdbabbcpphbkcfpgid)
+
+
+## Performance
+
+**Network aspect:** Portal loads a webpage only when it's in viewport. So even if you have like 100 webpages embedded, the network request will be sent only when the webpage enters the viewport. 
+
+**Memory aspect:** Currently, Portal doesn't flush out the webpage when it's out of viewport as it may need to be refetched again when in viewport. But I may give that as a option in future version to chose whether the user prefer memory or network performance.
 
 
 ## Arc Support
