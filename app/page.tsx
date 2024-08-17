@@ -83,38 +83,42 @@ const sideprojects = [
   {
     name: 'portal',
     href: '/projects/portal',
+    description: 'Embed live websites in New Tab.',
   },
   {
     name: 'qr-x',
     href: 'https://github.com/devtrice/qr-x',
+    description: 'An Elegant QR Code Library.',
   },
   {
     name: 'supex',
     href: 'https://supex.dev/',
+    description: 'Build cross-browser extensions.',
   },
   {
     name: 'vslook',
     href: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.vslook',
+    description: 'Create your own VSCode theme.',
   },
   {
     name: 'tailpile',
     href: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailpile',
+    description: 'Transpile TailwindCSS files into pure CSS.',
   },
   {
     name: 'renex',
     href: 'https://www.npmjs.com/package/renex',
+    description: 'A small useful react utility components.',
   },
   {
     name: 'favicon-pro',
     href: 'https://www.npmjs.com/package/favicon-pro',
+    description: 'Fetch live and best quality icons of any website.',
   },
   {
     name: 'tailwind-transpiler',
     href: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailwindcss-transpiler',
-  },
-  {
-    name: 'nextjs-boilerplate',
-    href: 'https://github.com/sudoaugustin/nextjs-boilerplate',
+    description: 'Transpile TailwindCSS files into pure CSS.',
   },
 ];
 
@@ -140,7 +144,7 @@ export default function AppPage() {
               <a href={href} target="_blank" className="shine" rel="noreferrer">
                 {name}
               </a>
-              <p className="ml-2.5 font-light">{tags.join(' / ')}</p>
+              <p className="ml-2 font-light">{tags.join(' / ')}</p>
             </li>
           ))}
         </ul>
@@ -149,12 +153,13 @@ export default function AppPage() {
         <h2 className="font-medium mb-1.5 text-base">Side Projects</h2>
         <p>I build small tools during my free time. So far I have built:</p>
         <ul className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
-          {sideprojects.map(({ name, href }) => (
+          {sideprojects.map(({ name, href, description }) => (
             <li key={name} className="block">
               -{' '}
               <a href={href} target="_blank" className="shine" rel="noreferrer">
                 {name}
               </a>
+              <p className="ml-2 font-light">{description}</p>
             </li>
           ))}
         </ul>
