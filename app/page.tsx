@@ -130,8 +130,8 @@ export default function AppPage() {
         <h1 className="mt-2.5 lg:mt-5">
           Hello There!
           <br />
-          I'm Augustin Joseph, a fullstack engineer from south east asia. You can also call me <i>Aung Bo Bo Tun</i>. I'm working as a
-          senior frontend engineer at Codigo SG since 2022.
+          I'm Augustin Joseph, a fullstack engineer from southeast Asia. You can also call me <i>Aung Bo Bo Tun</i>. I'm working as a senior
+          frontend engineer at Codigo SG since 2022.
         </h1>
       </div>
       <div>
