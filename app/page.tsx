@@ -81,6 +81,16 @@ const cdgprojects = [
 
 const sideprojects = [
   {
+    name: 'skel-ui',
+    href: 'https://skel-ui.augustin.zip/',
+    description: 'Next era of skeleton loading',
+  },
+  {
+    name: 'tailwindcss-shorthand',
+    href: 'https://www.npmjs.com/package/tailwindcss-shorthand',
+    description: 'Useful tailwindcss shorthand classes and variants to boost productivity',
+  },
+  {
     name: 'portal',
     href: '/projects/portal',
     description: 'Embed live websites in New Tab.',
