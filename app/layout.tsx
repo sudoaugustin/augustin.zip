@@ -14,7 +14,7 @@ export default function AppLayout({ children }: Props) {
       <head>
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
       </head>
-      <body className="text-sm max-w-2xl mx-auto px-5 py-10 lg:py-20 hover:[&_a]:underline animate-in duration-500 fade-in-5 slide-in-from-bottom-5">
+      <body className="max-w-2xl mx-auto px-5 py-10 lg:py-20 hover:[&_a]:underline animate-in duration-500 fade-in-5 slide-in-from-bottom-5">
         {children}
       </body>
     </html>

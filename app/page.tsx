@@ -81,12 +81,12 @@ const cdgprojects = [
 
 const sideprojects = [
   {
-    name: 'skel-ui',
+    name: 'skel-ui ✨',
     href: 'https://skel-ui.augustin.zip/',
     description: 'Next era of skeleton loading',
   },
   {
-    name: 'tailwindcss-shorthand',
+    name: 'tailwindcss-shorthand ✨',
     href: 'https://www.npmjs.com/package/tailwindcss-shorthand',
     description: 'Useful tailwindcss shorthand classes and variants to boost productivity',
   },
@@ -140,18 +140,18 @@ export default function AppPage() {
         <h1 className="mt-2.5 lg:mt-5">
           Hello There!
           <br />
-          I'm Augustin Joseph, a Fullstack Engineer from Myanmar. You can also call me <i>Aung Bo Bo Tun</i>. I have been working as a
-          Senior Frontend Engineer at CodigoSG since 2022.
+          I'm Augustin, a Fullstack Engineer from Myanmar. You can also call me <i>Aung Bo Bo Tun</i>. I have been working as a Senior
+          Frontend Engineer at CodigoSG since 2022.
         </h1>
       </div>
       <div>
-        <h2 className="font-medium mb-1.5 text-base">Codigo Projects</h2>
+        <h2 className="font-medium mb-1.5 text-lg underline">Codigo Projects</h2>
         <p>Within my 2+ years in codigo, I built these websites from scratch with colleagues</p>
-        <ul className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
+        <ul className="mt-2.5 mb-5 space-y-2.5 text-slate-400">
           {cdgprojects.map(({ name, tags, href }) => (
             <li key={name} className="block">
               -{' '}
-              <a href={href} target="_blank" className="shine" rel="noreferrer">
+              <a href={href} target="_blank" className="shine text-slate-100" rel="noreferrer">
                 {name}
               </a>
               <p className="ml-2 font-light">{tags.join(' / ')}</p>
@@ -160,13 +160,13 @@ export default function AppPage() {
         </ul>
       </div>
       <div>
-        <h2 className="font-medium mb-1.5 text-base">Side Projects</h2>
+        <h2 className="font-medium mb-1.5 text-lg underline">Personal Projects</h2>
         <p>I build small tools during my free time. So far I have built:</p>
-        <ul className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
+        <ul className="mt-2.5 mb-5 space-y-2.5 text-slate-400">
           {sideprojects.map(({ name, href, description }) => (
             <li key={name} className="block">
               -{' '}
-              <a href={href} target="_blank" className="shine" rel="noreferrer">
+              <a href={href} target="_blank" className="shine text-slate-100" rel="noreferrer">
                 {name}
               </a>
               <p className="ml-2 font-light">{description}</p>
@@ -221,6 +221,6 @@ export default function AppPage() {
 }
 
 export const metadata: Metadata = {
-  title: 'Augustin - Fullstack engineer',
+  title: 'Augustin Joseph',
   description: 'A fullstack engineer based in Yangon. Work at Codigo as a front-end engineer and won Technical Award at WIT 2019',
 };
