@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    @apply outline-none focus:outline-none selection:bg-zinc-200/75 dark:selection:bg-zinc-800/75;
+  }
+}
+
+@layer utilities {
+}
+
+@layer components {
+  .paging {
+    @apply w-screen max-w-3xl px-5 py-10 lg:py-20 mx-auto motion-preset-blur-up motion-duration-1500;
+  }
+}

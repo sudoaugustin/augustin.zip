@@ -1,8 +1,10 @@
 import localFont from 'next/font/local';
-import 'index.css';
 import type { ReactNode } from 'react';
+import FloatingButton from './FloatingButton';
+import './index.css';
 
-const sans = localFont({ src: './ClashGrotesk-Variable.woff2', variable: '--font-sans', display: 'swap' });
+const mono = localFont({ src: './DepartureMono-Regular.woff2', variable: '--font-mono', display: 'swap' });
+const sans = localFont({ src: './CabinetGrotesk-Variable.woff2', variable: '--font-sans', display: 'swap' });
 
 type Props = {
   children: ReactNode;
@@ -10,12 +12,13 @@ type Props = {
 
 export default function AppLayout({ children }: Props) {
   return (
-    <html lang="en" className={`${sans.variable} font-sans text-slate-200 bg-slate-950`}>
+    <html lang="en" className={`${sans.variable} ${mono.variable} font-sans`}>
       <head>
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
       </head>
-      <body className="max-w-2xl mx-auto px-5 py-10 lg:py-20 hover:[&_a]:underline animate-in duration-500 fade-in-5 slide-in-from-bottom-5">
+      <body className="w-full bg-zinc-50 text-black dark:bg-zinc-950 dark:text-white lg:text-lg duration-500">
         {children}
+        <FloatingButton />
       </body>
     </html>
   );

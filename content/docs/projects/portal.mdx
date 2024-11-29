@@ -1,0 +1,58 @@
+---
+title: Embed live websites in homepage
+description: Portal is a browser extension that lets you embed websites in homepage. It's available for Chrome and Firefox.
+---
+
+import Cards from "app/components/Cards";
+import { ChromeIcon, FirefoxIcon } from "app/components/BrandIcons";
+
+# Portal
+
+<iframe
+  src="https://www.youtube.com/embed/M8FAdLhr4pk?si=UZQKceuydqwqYnAD"
+  title="Portal Demo Video"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  frameBorder="0"
+  className="w-full border border-zinc-200 dark:border-zinc-800 rounded-md duration-500 aspect-[4/2.5]"
+  allowFullScreen
+  referrerPolicy="strict-origin-when-cross-origin"
+></iframe>
+
+Supercharge your browser by embedding real websites to your homepage instead of shortcut icons. You can easily change the size and position of these websites. It’s like a design tool where you can draw and embed websites instead of sketches.
+
+<Cards
+  items={[
+    {
+      icon: <ChromeIcon />,
+      label: "Chrome",
+      href: "https://chromewebstore.google.com/detail/portal/edgabbnbdacnalfdbabbcpphbkcfpgid",
+      description:"Click to install Chrome Extension",
+    },
+    {
+      icon: <FirefoxIcon />,
+      label: "Firefox",
+      href: "https://addons.mozilla.org/en-US/firefox/addon/web-portal/",
+      description:"Click to install Firefox Add-on",
+    },
+  ]}
+/>
+
+<div className="[&_th]:w-1/2 [&_th]:text-left mt-10">
+  | Network                                                                                                                                                   | Memory                                                                                                        |
+  | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+  | Portal loads a webpage only when it's in view. Even if 100 webpages are embedded, the network request will be sent only when the webpage enters the view. | Portal doesn't flush out the webpage when it's out of view as it may need to be refetched again when in view. |
+</div>
+
+## Arc Support
+Please follow the steps below to use Portal on Arc browser after your installtaion.
+
+<div className="[&_img]:mt-[0.75em]">
+  1. Pin the Portal's action button like below. ![Portal in Arc](/images/writings/pin-portal.png)
+  2. Eveytime you want to open Portal, click on the action. ![Click Portal action button](/images/writings/click-portal.png)
+</div>
+
+## Notes
+- Portal is safe to use and doesn't collect any user data.
+- Portal overrides some network requests to embed a website in a safer way using [declarativeNetRequest](https://developer.chrome.com/docs/extensions/reference/api/declarativeNetRequest#:~:text=declarativeNetRequest%20API%20is%20used%20to,content%2C%20thus%20providing%20more%20privacy.).
+- Portal ensures the network requests are overridden only in the homepage and doesn't effect your other webpages.
+- Although Portal overrides network requests, some websites use javascript to detect if it's embedded. Portal may not work well with those websites.

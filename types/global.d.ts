@@ -1,5 +1,5 @@
 import '@total-typescript/ts-reset';
-import { SVGProps as $SVGProps } from 'react';
+import type { SVGProps as $SVGProps } from 'react';
 
 declare global {
   type SVGProps = $SVGProps<SVGSVGElement>;

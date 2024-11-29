@@ -1,0 +1,111 @@
+[
+  {
+    "title": "NPM Packages",
+    "items": [
+      {
+        "logo": "/images/projects/SkelUI.svg",
+        "name": "Skel UI",
+        "description": "Next era of skeleton loading for React and React Native",
+        "links": [
+          { "text": "Docs", "href": "https://skel-ui.augustin.zip/" },
+          { "text": "Github", "href": "https://github.com/sudoaugustin/skel-ui" }
+        ]
+      },
+      {
+        "logo": "/images/projects/Supex.svg",
+        "name": "Supex",
+        "description": "Create cross-browser extensions seamlessly",
+        "links": [
+          { "text": "Docs", "href": "https://www.supex.dev/" },
+          { "text": "Github", "href": "https://github.com/sudoaugustin/supex" }
+        ]
+      },
+      {
+        "logo": "/images/projects/QRX.svg",
+        "name": "QR-X",
+        "description": "Elegant QR code library for popular frontend frameworks",
+        "links": [
+          { "text": "Docs", "href": "https://qr-x.devtrice.dev/" },
+          { "text": "Github", "href": "https://github.com/devtrice/qr-x" }
+        ]
+      },
+      {
+        "logo": "/images/projects/TailwindCSSShorthand.svg",
+        "name": "TailwindCSS Shorthand",
+        "description": "Useful tailwindcss classes and variants to boost productivity",
+        "links": [
+          { "text": "Docs", "href": "https://www.npmjs.com/package/tailwindcss-shorthand" },
+          { "text": "Github", "href": "https://github.com/sudoaugustin/tailwindcss-shorthand" }
+        ]
+      },
+      {
+        "logo": "/images/projects/Renex.svg",
+        "name": "Renex",
+        "description": "Useful react utility components to avoid unnecessary component splitting",
+        "links": [
+          { "text": "Docs", "href": "https://www.npmjs.com/package/renex" },
+          { "text": "Github", "href": "https://github.com/sudoaugustin/renex" }
+        ]
+      },
+      {
+        "logo": "/images/projects/FaviconPro.svg",
+        "name": "Favicon Pro",
+        "description": "Fetch latest and best quality icons of websites from ownserver",
+        "links": [
+          { "text": "Docs", "href": "https://www.npmjs.com/package/favicon-pro" },
+          { "text": "Github", "href": "https://github.com/sudoaugustin/favicon-pro" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "VSCode Extensions",
+    "items": [
+      {
+        "logo": "/images/projects/TailwindCSSTranspiler.svg",
+        "name": "Tailwind Transpiler(Unofficial)",
+        "downloads": "64.8K",
+        "description": "Transpile TailwindCSS files into pure CSS.",
+        "links": [
+          { "text": "Install", "href": "https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailwindcss-transpiler" },
+          { "text": "Github", "href": "https://github.com/sudoaugustin/tailwindcss-transpiler-vscode" }
+        ]
+      },
+      {
+        "logo": "/images/projects/VSlook.svg",
+        "name": "VSLook",
+        "downloads": "8.5K",
+        "description": "Easiest way to create your own VSCode theme.",
+        "links": [
+          { "text": "Install", "href": "https://marketplace.visualstudio.com/items?itemName=sudoaugustin.vslook" },
+          { "text": "Github", "href": "https://github.com/sudoaugustin/vslook" }
+        ]
+      },
+      {
+        "logo": "/images/projects/Tailpile.svg",
+        "name": "Tailpile",
+        "downloads": "5.3K",
+        "description": "Transpile TailwindCSS files into pure CSS.",
+        "links": [
+          { "text": "Install", "href": "https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailpile" },
+          { "text": "Github", "href": "https://github.com/sudoaugustin/tailpile" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Browser Extensions",
+    "items": [
+      {
+        "logo": "/images/projects/Portal.svg",
+        "name": "Portal",
+        "description": "Embed live websites in New Tab.",
+        "links": [
+          { "text": "Docs", "href": "/writings/projects/portal" },
+          { "text": "Chrome", "href": "https://chromewebstore.google.com/detail/portal/edgabbnbdacnalfdbabbcpphbkcfpgid" },
+          { "text": "Firefox", "href": "https://addons.mozilla.org/en-US/firefox/addon/web-portal/" }
+        ]
+      }
+    ]
+  }
+]

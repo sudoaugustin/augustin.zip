@@ -1,221 +1,177 @@
+import { ArrowDownOnSquareIcon, ArrowUpRightIcon } from '@heroicons/react/16/solid';
+import projects from 'data/projects.json';
+import websites from 'data/websites.json';
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import Profile from './icon.png';
+import Link from 'next/link';
+import { cssvars } from 'utils';
+import { GithubIcon, GmailIcon, LinkedInIcon, XIcon } from './components/BrandIcons';
+import Image from './components/Image';
+import LinkButton from './components/LinkButton';
+import Showcase from './components/Showcase';
+import Profile from './say-hi.png';
 
-const contacts = [
-  { name: 'Github', href: 'https://github.com/sudoaugustin' },
-  { name: 'Twitter', href: 'https://twitter.com/sudoaugustin' },
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/sudoaugustin/' },
-  { name: 'sudoaugustin@gmail.com', href: 'mailto:sudoaugustin@gmail.com' },
-];
-
-const techstacks = [
-  { name: 'NodeJS' },
-  { name: 'NextJS' },
-  { name: 'React Native' },
-  { name: 'Typescript' },
-  { name: 'Tailwind' },
-  { name: 'SCSS' },
-  { name: 'ESBuild' },
-  { name: 'MongoDB' },
-  { name: 'Laravel' },
-];
-
-const awards = [
-  { name: 'Technical Award', href: 'https://witaward.com/result/2019', competition: 'WIT 2019' },
-  {
-    name: 'Best Employee Award',
-    href: 'https://www.linkedin.com/posts/codigo-pte-ltd_hey-there-awesome-myanmar-codigo-rezeve-activity-7146663689310396416-zNu8?utm_source=share&utm_medium=member_desktop',
-    competition: 'Codigo 2023',
-  },
-];
-
-const education = [
-  {
-    year: '2023',
-    href: 'https://www.nccedu.com/qualifications/computing/ncc-education-level-5-diploma-in-computing-l5dc/',
-    course: 'Diploma in Computing',
-    university: 'NCC Education',
-  },
+const achievements = [
   {
     year: '2019',
-    href: 'https://www.uit.edu.mm/',
-    course: '2nd Year',
-    university: 'The University of Information Technology(Yangon)',
+    href: 'https://witaward.com/result/2019',
+    image: '/images/achievements/technology-grand-prize.png',
+    title: 'Technical Award',
+    place: 'Web Innovation Technology',
   },
   {
-    year: '2018',
-    href: 'https://www.uit.edu.mm/',
-    course: '1st Year',
-    university: 'The University of Information Technology(Yangon)',
+    year: '2023',
+    href: 'https://www.linkedin.com/posts/codigo-pte-ltd_hey-there-awesome-myanmar-codigo-rezeve-activity-7146663689310396416-zNu8?utm_source=share&utm_medium=member_desktop',
+    image: '/images/achievements/codigo-2023-employee.png',
+    title: 'Employee Award',
+    place: 'Codigo Company Limited',
   },
 ];
 
-const cdgprojects = [
-  {
-    name: 'codigo.co',
-    href: 'https://codigo.co/',
-    tags: ['Frontend Lead', 'AWS SES', 'Server Maintenance'],
-  },
-  {
-    name: 'techforhire.dev',
-    href: 'https://techforhire.dev/',
-    tags: ['Frontend Lead', 'AWS SES', 'Server Maintenance'],
-  },
-  {
-    name: 'trifectasingapore.com',
-    href: 'https://trifectasingapore.com/',
-    tags: ['Frontend Lead', 'Server Maintenance'],
-  },
-  {
-    name: 'neuroglee.com',
-    href: 'https://www.neuroglee.com/',
-    tags: ['Frontend Lead', 'Server Maintenance'],
-  },
-  {
-    name: 'boulderm.com',
-    href: 'https://boulderm.com/',
-    tags: ['Frontend Support'],
-  },
-];
-
-const sideprojects = [
-  {
-    name: 'skel-ui ✨',
-    href: 'https://skel-ui.augustin.zip/',
-    description: 'Next era of skeleton loading',
-  },
-  {
-    name: 'tailwindcss-shorthand ✨',
-    href: 'https://www.npmjs.com/package/tailwindcss-shorthand',
-    description: 'Useful tailwindcss shorthand classes and variants to boost productivity',
-  },
-  {
-    name: 'portal',
-    href: '/projects/portal',
-    description: 'Embed live websites in New Tab.',
-  },
-  {
-    name: 'qr-x',
-    href: 'https://github.com/devtrice/qr-x',
-    description: 'An Elegant QR Code Library.',
-  },
-  {
-    name: 'supex',
-    href: 'https://supex.dev/',
-    description: 'Build cross-browser extensions.',
-  },
-  {
-    name: 'vslook',
-    href: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.vslook',
-    description: 'Create your own VSCode theme.',
-  },
-  {
-    name: 'tailpile',
-    href: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailpile',
-    description: 'Transpile TailwindCSS files into pure CSS.',
-  },
-  {
-    name: 'renex',
-    href: 'https://www.npmjs.com/package/renex',
-    description: 'A small useful react utility components.',
-  },
-  {
-    name: 'favicon-pro',
-    href: 'https://www.npmjs.com/package/favicon-pro',
-    description: 'Fetch live and best quality icons of any website.',
-  },
-  {
-    name: 'tailwind-transpiler',
-    href: 'https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailwindcss-transpiler',
-    description: 'Transpile TailwindCSS files into pure CSS.',
-  },
+const connectLinks = [
+  { icon: <XIcon className="w-4 lg:w-6" />, href: 'https://x.com/sudoaugustin' },
+  { icon: <GithubIcon className="w-4 lg:w-6" />, href: 'https://github.com/sudoaugustin' },
+  { icon: <LinkedInIcon className="w-4 lg:w-6" />, href: 'https://www.linkedin.com/in/sudoaugustin/' },
+  { icon: <GmailIcon className="w-4 lg:w-6" />, href: 'mailto:sudoaugustin@gmail.com' },
 ];
 
 export default function AppPage() {
+  // const writings = source.getPages().filter(({ file }) => file.dirname !== 'projects');
+
   return (
-    <main className="space-y-5 lg:space-y-10">
-      <div>
-        <Image src={Profile} alt="My Face" className="size-10 rounded-md" />
-        <h1 className="mt-2.5 lg:mt-5">
-          Hello There!
-          <br />
-          I'm Augustin, a Fullstack Engineer from Myanmar. You can also call me <i>Aung Bo Bo Tun</i>. I have been working as a Senior
-          Frontend Engineer at CodigoSG since 2022.
-        </h1>
-      </div>
-      <div>
-        <h2 className="font-medium mb-1.5 text-lg underline">Codigo Projects</h2>
-        <p>Within my 2+ years in codigo, I built these websites from scratch with colleagues</p>
-        <ul className="mt-2.5 mb-5 space-y-2.5 text-slate-400">
-          {cdgprojects.map(({ name, tags, href }) => (
-            <li key={name} className="block">
-              -{' '}
-              <a href={href} target="_blank" className="shine text-slate-100" rel="noreferrer">
-                {name}
-              </a>
-              <p className="ml-2 font-light">{tags.join(' / ')}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h2 className="font-medium mb-1.5 text-lg underline">Personal Projects</h2>
-        <p>I build small tools during my free time. So far I have built:</p>
-        <ul className="mt-2.5 mb-5 space-y-2.5 text-slate-400">
-          {sideprojects.map(({ name, href, description }) => (
-            <li key={name} className="block">
-              -{' '}
-              <a href={href} target="_blank" className="shine text-slate-100" rel="noreferrer">
-                {name}
-              </a>
-              <p className="ml-2 font-light">{description}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h2 className="font-medium mb-1.5 text-base">Achievements</h2>
-        <div className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
-          {awards.map(({ name, href, competition }) => (
-            <a key={name} href={href} target="_blank" className="block" rel="noreferrer">
-              <span className="mr-0.5 inline-block">-</span> <span className="shine">{name}</span>
-              {' at '}
-              {competition}
-            </a>
+    <main className="paging space-y-10 lg:space-y-16 prose-headings:font-bold">
+      <header className="flex items-end justify-between">
+        <div className="flex items-center space-x-2.5">
+          <Image
+            src={Profile}
+            alt="augustin's face"
+            className="a-12 xl:a-14 rounded-full ring-1 ring-zinc-100 dark:ring-zinc-900 bg-gradient-to-b from-zinc-200 to-zinc-100 dark:from-zinc-800 dark:to-zinc-900"
+          />
+          <div>
+            <h1>Augustin Joseph</h1>
+            <p>Software Engineer</p>
+          </div>
+        </div>
+        <div>
+          {/* <ul className="flex items-center justify-end space-x-4 mb-0">
+            {navLinks.map(({ text, href }) => (
+              <li key={href} className="flex items-center space-x-0.5 text-zinc-100 leading-none">
+                <Link href={href}>{text}</Link>
+              </li>
+            ))}
+          </ul> */}
+          <ul className="flex items-center justify-end space-x-3 mb-1.5 lg:mb-2">
+            {connectLinks.map(({ icon, href }) => (
+              <li key={href}>
+                <Link href={href} className="duration-[250ms] hover:text-white">
+                  {icon}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </header>
+
+      <section>
+        <h2 className="mb-2 lg:mb-4">About me</h2>
+        <p className="text-zinc-800 dark:text-zinc-200">
+          I’m a dedicated engineer from Myanmar, passionate about developer experience engineering and design engineering. I'm working as a
+          Senior Frontend Engineer at Codigo. I'm studying B.Sc(Hons) Computing at University of Greenwich.
+        </p>
+      </section>
+      {/* <section>
+        <h2 className="mb-2 lg:mb-4">Writings</h2>
+        <div className="">
+          {writings.map(({ url, data }) => (
+            <Link
+              key={url}
+              href={url}
+              className="text-zinc-800 hover:text-zinc-950 dark:text-zinc-200 hover:dark:text-zinc-50 hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50 hover:rounded-lg block py-2 px-4 -mx-4 duration-[250ms]"
+            >
+              <span className="!font-medium">{data.title}</span> <br />
+              <span className="text-sm lg:text-base">{data.description}</span>
+            </Link>
           ))}
         </div>
-      </div>
-      <div>
-        <h2 className="font-medium mb-1.5 text-base">Education</h2>
-        <div className="mt-2.5 mb-5 space-y-2.5 text-slate-100">
-          {education.map(({ year, href, course, university }) => (
-            <a key={course} href={href} target="_blank" className="block" rel="noreferrer">
-              <b className="inline-block w-9 font-medium">{year}</b> - <span className="shine">{course}</span>
-              {' at '}
-              {university}
-            </a>
+      </section> */}
+
+      <Showcase title="Websites">
+        {websites.map(({ name, image }, index) => (
+          <div
+            key={name}
+            style={cssvars({ delay: `${(index + 1) * 200}ms` })}
+            className="w-80 lg:w-[21.25rem] relative motion-delay-[--delay] motion-preset-fade"
+          >
+            <div className="w-full aspect-[4/3] bg-zinc-100 dark:bg-zinc-900 relative rounded-lg overflow-hidden duration-500">
+              <Image src={image} alt="" fill />
+            </div>
+            <Link
+              href={`https://www.${name}`}
+              target="_blank"
+              className="group inline-flex text-zinc-600 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200 font-[450] mt-1 lg:mt-2 space-x-0.5 duration-500"
+            >
+              <span>{name}</span>
+              <ArrowUpRightIcon className="w-4 duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </Link>
+          </div>
+        ))}
+      </Showcase>
+
+      {projects.map(({ title, items }) => (
+        <Showcase key={title} title={title}>
+          {items.map(({ logo, name, links, description, ...rest }, index) => (
+            <div
+              key={name}
+              style={cssvars({ delay: `${(index + 1) * 200}ms` })}
+              className="w-80 lg:w-[21.25rem] p-4 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 hover:border-zinc-200 dark:hover:border-zinc-800 rounded-lg motion-delay-[--delay] motion-preset-fade duration-500"
+            >
+              <Image src={logo} alt="" width={64} height={64} className="rounded-lg" />
+              <div className="relative z-5 mt-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-zinc-800 dark:text-zinc-200">{name}</h3>
+                  {'downloads' in rest && (
+                    <p className="flex items-center text-sm text-zinc-600 mb-0.5">
+                      <ArrowDownOnSquareIcon className="w-4" />
+                      <span className="mt-1">{rest.downloads}</span>
+                    </p>
+                  )}
+                </div>
+                <p className="text-zinc-600 leading-[1.25] mt-1 mb-3 dark:text-zinc-400">{description}</p>
+                <div className="space-x-2.5">
+                  {links.map(({ text, href }) => (
+                    <LinkButton key={text} href={href}>
+                      {text}
+                    </LinkButton>
+                  ))}
+                </div>
+              </div>
+            </div>
           ))}
-        </div>
-      </div>
-      <div>
-        <h2 className="font-medium mb-1.5 text-base">Tech Stack</h2>
-        <ul className="list-inside mt-2.5 mb-5 gap-2.5 text-slate-100 list-disc grid grid-cols-3">
-          {techstacks.map(({ name }) => (
-            <li key={name}>{name}</li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h2 className="font-medium mb-1.5 text-base">Contact Me Via</h2>
-        <div className="list-inside mt-2.5 mb-5 gap-2.5 text-slate-100 list-disc grid grid-cols-3 sm:grid-cols-4">
-          {contacts.map(({ name, href }) => (
-            <a key={name} href={href} target="_blank" className="shine" rel="noreferrer">
-              {name}
-            </a>
-          ))}
-        </div>
-      </div>
+        </Showcase>
+      ))}
+
+      <Showcase title="Achievements" className="!space-x-5 lg:!space-x-10 mb-5">
+        {achievements.map(({ year, image, href, title, place }, index) => (
+          <div
+            key={title}
+            style={cssvars({ delay: `${(index + 1) * 200}ms` })}
+            className="w-80 lg:flex-1 relative motion-delay-[--delay] motion-preset-fade"
+          >
+            <Image
+              src={image}
+              alt=""
+              width={192}
+              height={192}
+              className="a-16 rounded-lg bg-gradient-to-b dark:from-zinc-800 dark:to-zinc-900"
+            />
+            <div className="mt-4">
+              <h3 className="text-zinc-800 dark:text-zinc-200">{title}</h3>
+              <p className="text-zinc-600 dark:text-zinc-400 text-sm lg:text-base flex justify-between">
+                <span>{place}</span> <time className="text-zinc-600 dark:text-zinc-400">{year}</time>
+              </p>
+            </div>
+          </div>
+        ))}
+      </Showcase>
     </main>
   );
 }
