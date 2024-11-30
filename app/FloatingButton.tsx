@@ -3,11 +3,16 @@ import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 import { useEffect, useState } from 'react';
 
 export default function FloatingButton() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
-    console.log(isDark);
-    document.documentElement.classList.toggle('dark');
+    const isDark = localStorage.getItem('isDark');
+    isDark && setIsDark(JSON.parse(isDark) as boolean);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('isDark', `${isDark}`);
+    document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
   }, [isDark]);
 
   return (

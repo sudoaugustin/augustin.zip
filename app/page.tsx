@@ -161,7 +161,7 @@ export default function AppPage() {
               alt=""
               width={192}
               height={192}
-              className="a-16 rounded-lg bg-gradient-to-b dark:from-zinc-800 dark:to-zinc-900"
+              className="a-16 rounded-lg bg-gradient-to-b from-zinc-200 to-zinc-100 dark:from-zinc-800 dark:to-zinc-900"
             />
             <div className="mt-4">
               <h3 className="text-zinc-800 dark:text-zinc-200">{title}</h3>
