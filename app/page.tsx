@@ -75,7 +75,7 @@ export default function AppPage() {
         <h2 className="mb-2 lg:mb-4">About me</h2>
         <p className="text-zinc-800 dark:text-zinc-200">
           I’m a dedicated engineer from Myanmar, passionate about developer experience engineering and design engineering. I'm working as a
-          Senior Frontend Engineer at Codigo. I'm studying B.Sc(Hons) Computing at University of Greenwich.
+          Senior Frontend Engineer at Codigo. I'm also studying B.Sc(Hons) Computing at University of Greenwich.
         </p>
       </section>
       {/* <section>
