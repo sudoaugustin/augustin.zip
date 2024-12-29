@@ -5,7 +5,7 @@
       {
         "logo": "/images/projects/SkelUI.svg",
         "name": "Skel UI",
-        "description": "Next era of skeleton loading for React and React Native",
+        "description": "Lightweight and powerful skeleton library for React and React Native.",
         "links": [
           { "text": "Docs", "href": "https://skel-ui.augustin.zip/" },
           { "text": "Github", "href": "https://github.com/sudoaugustin/skel-ui" }
