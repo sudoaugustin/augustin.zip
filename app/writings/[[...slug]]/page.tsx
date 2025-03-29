@@ -29,9 +29,18 @@ export async function generateMetadata({ params }: PageProps) {
   const page = source.getPage(slug);
   if (!page) notFound();
 
+  // console.log("IMAGE",page.data.image)
+
   return {
     title: page.data.title,
     description: page.data.description,
+    openGraph: page.slugs.includes("ultra-power-saving-mode") ? {
+      images: [
+        {
+          url: "/images/writings/ultra-battery-banner.png",
+        },
+      ],
+    } : undefined,
   } satisfies Metadata;
 }
 
