@@ -88,9 +88,9 @@ export default function AppPage() {
             <Image
               src={image}
               alt=""
+              sizes="(min-width: 1024px) 25vw, (min-width: 768px) 35vw, 50vw"
               width={1080}
               height={810}
-              sizes=""
               fetchPriority={index < 3 ? 'high' : 'auto'}
               className="relative aspect-[4/3] w-full overflow-hidden rounded-lg border border-theme-200/50 bg-theme-100 duration-500 hover:border-theme-200"
             />

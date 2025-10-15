@@ -1,5 +1,6 @@
 'use client';
 
+import { SpeakerWaveIcon, SpeakerXMarkIcon } from '@heroicons/react/16/solid';
 import { type MutableRefObject, type ReactNode, createContext, useCallback, useEffect, useRef, useState } from 'react';
 
 type WindowWithAudioContext = {
@@ -52,5 +53,18 @@ export const AudioProvider = ({ children }: { children: ReactNode }) => {
     };
   }, [enableAudio]);
 
-  return <AudioContext.Provider value={{ audioRef, isReady, enableAudio }}>{children}</AudioContext.Provider>;
+  return (
+    <AudioContext.Provider value={{ audioRef, isReady, enableAudio }}>
+      {children}
+      <button
+        type="button"
+        className="a-10 fixed right-[4.5rem] bottom-5 flex flex-center overflow-hidden rounded-[1.25rem] border border-theme-200/75 bg-theme-100 text-theme-600 lg:right-[5.5rem] lg:bottom-10"
+        title="Audio status indicator"
+        aria-label="Audio status indicator"
+        onClick={() => setIsReady(!isReady)}
+      >
+        {isReady ? <SpeakerWaveIcon className="motion-preset-fade-sm w-4" /> : <SpeakerXMarkIcon className="w-4" />}
+      </button>
+    </AudioContext.Provider>
+  );
 };

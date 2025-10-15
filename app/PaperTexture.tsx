@@ -7,7 +7,7 @@ export default function PaperTexture() {
   return (
     <div
       style={{ filter: 'url(#noise)' }}
-      className={`pointer-events-none absolute inset-0 z-5 mix-blend-multiply duration-500 ${settings.paperTexture ? 'opacity-100 [.light_&]:opacity-75' : 'opacity-0'}`}
+      className={`pointer-events-none absolute inset-0 z-10 mix-blend-multiply duration-500 ${settings.paperTexture ? 'opacity-100 [.light_&]:opacity-75' : 'opacity-0'}`}
     >
       <svg className="hidden">
         <title>Noise</title>

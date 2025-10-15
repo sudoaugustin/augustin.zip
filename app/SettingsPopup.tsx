@@ -84,7 +84,9 @@ export default function SettingsPopup() {
 
   return (
     <motion.div
-      className={`fixed right-5 bottom-5 overflow-hidden rounded-[1.25rem] border border-theme-200/75 bg-theme-100 lg:right-10 lg:bottom-10 ${settings.grayscale ? 'grayscale' : ''}`}
+      className={
+        'fixed right-5 bottom-5 z-5 overflow-hidden rounded-[1.25rem] border border-theme-200/75 bg-theme-100 lg:right-10 lg:bottom-10'
+      }
       initial={{ width: '2.5rem', height: '2.5rem' }}
       animate={{ width: isOpen ? '20rem' : '2.5rem', height: isOpen ? '20rem' : '2.5rem', borderRadius: isOpen ? '0.75rem' : '1.25rem' }}
       transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
@@ -113,7 +115,7 @@ export default function SettingsPopup() {
                           <Tooltip.Portal>
                             <Tooltip.Content
                               side="bottom"
-                              className="after:a-4 after:-translate-y-2 after:-translate-x-2 relative mt-2 w-80 rounded-lg bg-theme-200 p-2.5 text-sm after:absolute after:top-0 after:left-1/2 after:block after:rotate-45 after:rounded after:bg-theme-200"
+                              className="after:a-4 after:-translate-y-2 after:-translate-x-2 relative z-5 mt-2 w-80 rounded-lg bg-theme-200 p-2.5 text-sm after:absolute after:top-0 after:left-1/2 after:block after:rotate-45 after:rounded after:bg-theme-200"
                             >
                               {information}
                             </Tooltip.Content>
