@@ -9,7 +9,7 @@ export default function Providers({ children }: { children: ReactNode }) {
   return (
     <SettingsProvider>
       <Tooltip.Provider>
-        <ThemeProvider attribute="class" themes={['light', 'dark', 'custom']} defaultTheme="system">
+        <ThemeProvider attribute="class" themes={['light', 'dark', 'custom']} defaultTheme="dark">
           <AudioProvider>{children}</AudioProvider>
         </ThemeProvider>
       </Tooltip.Provider>
