@@ -7,12 +7,20 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      },
       "style": {
         "noImplicitBoolean": "off",
         "useBlockStatements": "off"
       },
-      "a11y": {
-        "noSvgWithoutTitle": "off"
+      "nursery": {
+        "useSortedClasses": {
+          "options": {
+            "functions": ["clsx", "cva", "tw", "tw.*"],
+            "attributes": ["classList"]
+          }
+        }
       }
     },
     "ignore": ["/node_modules", "/.next"]

@@ -75,7 +75,7 @@
         "logo": "/images/projects/VSLook.svg",
         "name": "VSLook",
         "downloads": "8.5K",
-        "description": "Easiest way to create your own VSCode theme.",
+        "description": "No-code tool to create VSCode theme.",
         "links": [
           { "text": "Install", "href": "https://marketplace.visualstudio.com/items?itemName=sudoaugustin.vslook" },
           { "text": "Github", "href": "https://github.com/sudoaugustin/vslook" }
@@ -100,11 +100,7 @@
         "logo": "/images/projects/Portal.svg",
         "name": "Portal",
         "description": "Embed live websites in New Tab.",
-        "links": [
-          { "text": "Docs", "href": "/writings/projects/portal" },
-          { "text": "Chrome", "href": "https://chromewebstore.google.com/detail/portal/edgabbnbdacnalfdbabbcpphbkcfpgid" },
-          { "text": "Firefox", "href": "https://addons.mozilla.org/en-US/firefox/addon/web-portal/" }
-        ]
+        "links": [{ "text": "Visit", "href": "/writings/projects/portal" }]
       }
     ]
   }

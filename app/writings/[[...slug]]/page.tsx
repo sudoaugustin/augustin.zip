@@ -18,7 +18,7 @@ export default async function Page({ params }: PageProps) {
   const MDX = page.data.body;
 
   return (
-    <article className="paging prose prose-lg leading-normal prose-zinc prose-h1:mb-10 prose-h1:text-2xl prose-img:rounded-lg prose-img:border prose-img:border-zinc-200 dark:prose-img:border-zinc-800 prose-headings:text-lg prose-headings:font-bold dark:prose-invert">
+    <article className="prose prose-theme prose-img:rounded-lg prose-img:border prose-img:border-theme-200 prose-headings:font-semibold">
       <MDX components={{ ...defaultMdxComponents, Tab, Tabs }} />
     </article>
   );
@@ -34,13 +34,15 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: page.data.title,
     description: page.data.description,
-    openGraph: page.slugs.includes("ultra-power-saving-mode") ? {
-      images: [
-        {
-          url: "/images/writings/ultra-battery-banner.png",
-        },
-      ],
-    } : undefined,
+    openGraph: page.slugs.includes('ultra-power-saving-mode')
+      ? {
+          images: [
+            {
+              url: '/images/writings/ultra-battery-banner.png',
+            },
+          ],
+        }
+      : undefined,
   } satisfies Metadata;
 }
 

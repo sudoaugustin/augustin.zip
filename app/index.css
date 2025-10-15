@@ -3,17 +3,41 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --font-size: 16px;
+  }
+  .light {
+    --color-theme-0: 100% 0 0;
+    --color-theme-50: 98.5% 0 0;
+    --color-theme-100: 96.7% 0.001 286.375;
+    --color-theme-200: 92% 0.004 286.32;
+    --color-theme-300: 87.1% 0.006 286.286;
+    --color-theme-400: 70.5% 0.015 286.067;
+    --color-theme-500: 55.2% 0.016 285.938;
+    --color-theme-600: 44.2% 0.017 285.786;
+    --color-theme-700: 37% 0.013 285.805;
+    --color-theme-800: 27.4% 0.006 286.033;
+    --color-theme-900: 21% 0.006 285.885;
+    --color-theme-950: 14.1% 0.005 285.823;
+    --color-theme-1000: 0% 0 0;
+  }
+  .dark {
+    --color-theme-0: 0% 0 0;
+    --color-theme-50: 14.1% 0.005 285.823;
+    --color-theme-100: 21% 0.006 285.885;
+    --color-theme-200: 27.4% 0.006 286.033;
+    --color-theme-300: 37% 0.013 285.805;
+    --color-theme-400: 44.2% 0.017 285.786;
+    --color-theme-500: 55.2% 0.016 285.938;
+    --color-theme-600: 70.5% 0.015 286.067;
+    --color-theme-700: 87.1% 0.006 286.286;
+    --color-theme-800: 92% 0.004 286.32;
+    --color-theme-900: 96.7% 0.001 286.375;
+    --color-theme-950: 98.5% 0 0;
+    --color-theme-1000: 100% 0 0;
+  }
   * {
     -webkit-tap-highlight-color: transparent;
-    @apply outline-none focus:outline-none selection:bg-zinc-200/75 dark:selection:bg-zinc-800/75;
-  }
-}
-
-@layer utilities {
-}
-
-@layer components {
-  .paging {
-    @apply w-screen max-w-3xl px-5 py-10 lg:py-20 mx-auto motion-preset-blur-up motion-duration-1500;
+    @apply outline-none focus:outline-none;
   }
 }
