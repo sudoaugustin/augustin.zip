@@ -28,12 +28,12 @@ const getTimePercent = () => {
 export default function Clock() {
   const { h, m, s } = useTime();
   const { settings } = useSettings();
-  const { audioRef } = useContext(AudioContext);
+  const { audioRef, isReady } = useContext(AudioContext);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     const audio = audioRef?.current;
-    if (audio && settings.clockSound) {
+    if (audio && settings.clockSound && isReady) {
       const osc1 = audio.createOscillator();
       const osc2 = audio.createOscillator();
       const gainNode = audio.createGain();
@@ -63,7 +63,7 @@ export default function Clock() {
       osc1.stop(currentTime + duration);
       osc2.stop(currentTime + duration);
     }
-  }, [s]);
+  }, [s, isReady]);
 
   return (
     <svg viewBox="0 0 100 100" fill="none" className="-rotate-180 w-16 lg:w-[5.5rem]">

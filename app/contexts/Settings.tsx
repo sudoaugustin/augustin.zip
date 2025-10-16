@@ -25,7 +25,7 @@ const defaultSettings: Settings = {
   grayscale: true,
   paperTexture: true,
   clockSound: false,
-  backgroundSound: true,
+  backgroundSound: false,
   interactionSound: true,
 };
 

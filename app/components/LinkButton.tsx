@@ -7,11 +7,11 @@ import { useContext, type HTMLAttributes } from 'react';
 
 export default function LinkButton({ className, ...rest }: LinkProps & HTMLAttributes<HTMLAnchorElement>) {
   const { settings } = useSettings();
-  const { audioRef } = useContext(AudioContext);
+  const { audioRef, isReady } = useContext(AudioContext);
 
   const handleEmitAudio = (freq: number) => {
     const audio = audioRef?.current;
-    if (audio && settings.interactionSound) {
+    if (audio && settings.interactionSound && isReady) {
       const duration = 0.025;
       const currentTime = audio.currentTime;
 
