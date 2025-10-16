@@ -39,7 +39,7 @@ export default function LinkButton({ className, ...rest }: LinkProps & HTMLAttri
       target="_blank"
       onClick={() => handleEmitAudio(3200)}
       onMouseEnter={() => handleEmitAudio(2400)}
-      className={`rounded-full bg-theme-200 px-3 py-1 text-theme-600 text-xs/none duration-500 hover:bg-theme-300 hover:text-theme-800 lg:text-sm/none ${className}`}
+      className={`rounded-full bg-theme-200 px-3 py-1 text-sm text-theme-600 duration-500 hover:bg-theme-300 hover:text-theme-800 ${className}`}
     />
   );
 }
