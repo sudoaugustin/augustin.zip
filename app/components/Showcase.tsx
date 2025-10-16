@@ -1,35 +1,9 @@
 'use client';
 
 import * as ScrollArea from '@radix-ui/react-scroll-area';
-import { AudioContext } from 'app/contexts/Audio';
-import { useSettings } from 'app/contexts/Settings';
-import { type HTMLAttributes, useContext, useRef } from 'react';
+import type { HTMLAttributes } from 'react';
 
 export default function Showcase({ title, children, className, ...rest }: HTMLAttributes<HTMLElement>) {
-  const { settings } = useSettings();
-  const { audioRef, isReady } = useContext(AudioContext);
-
-  const handleScroll = () => {
-    const audio = audioRef?.current;
-    if (audio && settings.interactionSound && isReady) {
-      const currentTime = audio.currentTime;
-
-      const osc = audio.createOscillator();
-      const gainNode = audio.createGain();
-
-      osc.connect(gainNode);
-      gainNode.connect(audio.destination);
-
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(100, currentTime);
-
-      gainNode.gain.setValueAtTime(0.05, currentTime);
-
-      osc.start(currentTime);
-      osc.stop(currentTime + 0.005);
-    }
-  };
-
   return (
     <section>
       <ScrollArea.Root type="auto">
@@ -39,7 +13,7 @@ export default function Showcase({ title, children, className, ...rest }: HTMLAt
             <ScrollArea.Thumb className="!h-1.5 motion-preset-fade cursor-pointer rounded bg-theme-400 transition-colors duration-500 hover:bg-theme-600" />
           </ScrollArea.Scrollbar>
         </div>
-        <ScrollArea.Viewport className="max-lg:-mx-5 max-lg:px-5" onScroll={handleScroll}>
+        <ScrollArea.Viewport className="max-lg:-mx-5 max-lg:px-5">
           <div {...rest} className={`flex space-x-4 [&>*]:flex-shrink-0 ${className}`}>
             {children}
           </div>
