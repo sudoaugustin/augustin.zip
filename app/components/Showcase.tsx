@@ -7,11 +7,11 @@ import { type HTMLAttributes, useContext, useRef } from 'react';
 
 export default function Showcase({ title, children, className, ...rest }: HTMLAttributes<HTMLElement>) {
   const { settings } = useSettings();
-  const { audioRef } = useContext(AudioContext);
+  const { audioRef, isReady } = useContext(AudioContext);
 
   const handleScroll = () => {
     const audio = audioRef?.current;
-    if (audio && settings.interactionSound) {
+    if (audio && settings.interactionSound && isReady) {
       const currentTime = audio.currentTime;
 
       const osc = audio.createOscillator();
@@ -23,7 +23,7 @@ export default function Showcase({ title, children, className, ...rest }: HTMLAt
       osc.type = 'sine';
       osc.frequency.setValueAtTime(100, currentTime);
 
-      gainNode.gain.setValueAtTime(0.1, currentTime);
+      gainNode.gain.setValueAtTime(0.05, currentTime);
 
       osc.start(currentTime);
       osc.stop(currentTime + 0.005);
