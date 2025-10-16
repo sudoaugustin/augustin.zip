@@ -42,7 +42,7 @@ export default function AppPage() {
             />
             <div>
               <h1 className="font-semibold">Augustin</h1>
-              <p className="mt-1 text-sm">Software Engineer</p>
+              <p className="mt-1">Software Engineer</p>
             </div>
           </div>
           {/* <LinkButton
