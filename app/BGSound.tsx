@@ -57,9 +57,9 @@ export default function BGSound() {
     lfo2.type = 'sine';
     lfo3.type = 'triangle';
 
-    lfo1.frequency.setValueAtTime(0.3, audioContext.currentTime);
-    lfo2.frequency.setValueAtTime(0.7, audioContext.currentTime);
-    lfo3.frequency.setValueAtTime(1.2, audioContext.currentTime);
+    lfo1.frequency.setValueAtTime(0.25, audioContext.currentTime);
+    lfo2.frequency.setValueAtTime(0.5, audioContext.currentTime);
+    lfo3.frequency.setValueAtTime(0.75, audioContext.currentTime);
 
     const lfoGain1 = audioContext.createGain();
     const lfoGain2 = audioContext.createGain();

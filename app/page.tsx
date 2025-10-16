@@ -38,20 +38,19 @@ export default function AppPage() {
               src={Profile}
               alt="augustin's avatar"
               fetchPriority="high"
-              className="a-12 xl:a-16 rounded-full bg-gradient-to-b from-theme-200 to-theme-100 ring-1 ring-theme-100"
+              className="a-12 lg:a-16 rounded-full bg-gradient-to-b from-theme-200 to-theme-100 ring-1 ring-theme-100"
             />
             <div>
-              <h1 className="font-bold">Augustin</h1>
-              <p>Software Engineer</p>
+              <h1 className="font-semibold">Augustin</h1>
+              <p className="mt-1">Software Engineer</p>
             </div>
           </div>
-          {/* <button
-            type="button"
-            className="flex items-center space-x-1 rounded-full bg-theme-200 px-2 py-0.5 text-theme-600 text-xs/none duration-500 hover:bg-theme-300 hover:text-theme-800 lg:mt-4 lg:space-x-1.5 lg:px-3 lg:py-1 lg:text-sm/none"
+          {/* <LinkButton
+            className="flex items-center space-x-1 rounded-full bg-theme-200 px-2 py-0.5 text-theme-600 duration-500 hover:bg-theme-300 hover:text-theme-800 lg:mt-4 lg:space-x-1.5 lg:px-3 lg:py-1"
           >
             <SparklesIcon className="w-3 lg:w-4" />
-            <p className="text-xs lg:text-sm">Check My Fit with AI</p>
-          </button> */}
+            <p>Check My Fit with AI</p>
+          </LinkButton> */}
         </div>
         <div className="flex flex-col items-center">
           <Clock />
@@ -60,8 +59,8 @@ export default function AppPage() {
       </header>
 
       <section>
-        <p className="font-semibold ">About me</p>
-        <h2 className="my-2 text-theme-800 lg:my-4">
+        <p className="mb-2.5 font-semibold lg:mb-5">About me</p>
+        <h2 className="mb-2 text-theme-800 lg:mb-4">
           I’m a software engineer who loves developer experience and design engineering. I started in 2017 as a computer science student. In
           2020, I launched a VSCode extension that has over 78K installs and I’ve been hooked on creating ever since. These days, I build
           everything from web and mobile apps to browser extensions and open-source libraries.

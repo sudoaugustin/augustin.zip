@@ -69,6 +69,7 @@ export default function SettingsPopup() {
               onValueChange={(value) => setSettings({ fontSize: Number.parseInt(value) })}
             />
           ),
+          className: 'max-lg:hidden',
         },
         {
           label: 'Grayscale',
@@ -124,8 +125,8 @@ export default function SettingsPopup() {
                       )}
                     </div>
                     <div className="divide-y divide-theme-200 rounded-lg bg-theme-200/50 px-2">
-                      {settings.map(({ label, component }) => (
-                        <div key={label} className="flex items-center justify-between py-2">
+                      {settings.map(({ label, component, ...rest }) => (
+                        <div key={label} className={`flex items-center justify-between py-2 ${'className' in rest ? rest.className : ''}`}>
                           <p>{label}</p>
                           {component}
                         </div>
