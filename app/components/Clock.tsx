@@ -2,7 +2,7 @@
 
 import { AudioContext } from 'app/contexts/Audio';
 import { useSettings } from 'app/contexts/Settings';
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 const useTime = () => {
   const [time, setTime] = useState(getTimePercent);
@@ -29,9 +29,11 @@ export default function Clock() {
   const { h, m, s } = useTime();
   const { settings } = useSettings();
   const { audioRef, isReady } = useContext(AudioContext);
+  const [isClient, setIsClient] = useState(false);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
+    setIsClient(true);
     const audio = audioRef?.current;
     if (audio && settings.clockSound && isReady) {
       const osc1 = audio.createOscillator();
@@ -63,7 +65,7 @@ export default function Clock() {
       osc1.stop(currentTime + duration);
       osc2.stop(currentTime + duration);
     }
-  }, [s, isReady]);
+  }, [s]);
 
   return (
     <svg viewBox="0 0 100 100" fill="none" className="-rotate-180 w-16 lg:w-[5.5rem]">
@@ -72,14 +74,28 @@ export default function Clock() {
         fill="white"
         className="fill-theme-200/75 stroke-theme-300/75"
       />
-      <path
-        d="M49.5 46H50.5L50.125 76H50H49.875L49.5 46Z"
-        transform={`rotate(${s * 360} 50 50)`}
-        className="fill-theme-500"
-        suppressHydrationWarning
-      />
-      <path d="M49 46H51L50.5 82H49.5L49 46Z" transform={`rotate(${m * 360} 50 50)`} className="fill-theme-600" suppressHydrationWarning />
-      <path d="M49 46H51L50.5 74H49.5L49 46Z" transform={`rotate(${h * 360} 50 50)`} className="fill-theme-600" suppressHydrationWarning />
+      {isClient && (
+        <>
+          <path
+            d="M49.5 46H50.5L50.125 76H50H49.875L49.5 46Z"
+            transform={`rotate(${s * 360} 50 50)`}
+            className="fill-theme-500"
+            suppressHydrationWarning
+          />
+          <path
+            d="M49 46H51L50.5 82H49.5L49 46Z"
+            transform={`rotate(${m * 360} 50 50)`}
+            className="fill-theme-600"
+            suppressHydrationWarning
+          />
+          <path
+            d="M49 46H51L50.5 74H49.5L49 46Z"
+            transform={`rotate(${h * 360} 50 50)`}
+            className="fill-theme-600"
+            suppressHydrationWarning
+          />
+        </>
+      )}
     </svg>
   );
 }
