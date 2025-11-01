@@ -12,7 +12,7 @@ export default function PaperTexture() {
       <svg className="hidden">
         <title>Noise</title>
         <filter id="noise">
-          <feTurbulence type="fractalNoise" baseFrequency={1} numOctaves={2} seed={2} />
+          <feTurbulence type="fractalNoise" baseFrequency="2.5" numOctaves="3" seed="2" />
         </filter>
       </svg>
     </div>
