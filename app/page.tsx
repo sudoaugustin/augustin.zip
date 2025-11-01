@@ -1,22 +1,15 @@
-import {
-  ArrowDownOnSquareIcon,
-  ArrowUpRightIcon,
-  DocumentTextIcon,
-  EnvelopeIcon,
-  SparklesIcon,
-  SpeakerWaveIcon,
-} from '@heroicons/react/16/solid';
+import { ArrowDownOnSquareIcon, ArrowUpRightIcon, DocumentTextIcon, EnvelopeIcon } from '@heroicons/react/16/solid';
 import projects from 'data/projects.json';
 import websites from 'data/websites.json';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { cssvars } from 'utils';
+import { GithubIcon, XIcon } from './components/BrandIcons';
+import Clock from './components/Clock';
 import Image from './components/Image';
 import LinkButton from './components/LinkButton';
 import Showcase from './components/Showcase';
 import Profile from './say-hi.png';
-import { GithubIcon, XIcon } from './components/BrandIcons';
-import Clock from './components/Clock';
 
 const connectLinks = [
   { icon: <EnvelopeIcon className="w-4 lg:w-[1.125rem]" />, text: 'Mail', href: 'mailto:sudoaugustin@gmail.com' },
@@ -76,7 +69,6 @@ export default function AppPage() {
           ))}
         </ul>
       </section>
-
       <Showcase title="Websites">
         {websites.map(({ name, image }, index) => (
           <div
@@ -137,13 +129,12 @@ export default function AppPage() {
           ))}
         </Showcase>
       ))}
-
-      {/* <Showcase title="UI Experiments" className="!space-x-5 lg:!space-x-10 mb-5"></Showcase> */}
     </main>
   );
 }
 
 export const metadata: Metadata = {
-  title: 'Augustin Joseph',
-  description: 'A software engineer based in Yangon, Myanmar, passionate about developer experience and design engineering.',
+  title: 'Augustin • Software Engineer',
+  description:
+    'Software engineer focused on JavaScript/TypeScript, React & Next.js. Building apps and open-source tools since 2017. Explore projects, resume, and contact.',
 };
