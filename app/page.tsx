@@ -53,7 +53,7 @@ export default function AppPage() {
 
       <section>
         <p className="mb-2.5 font-semibold lg:mb-5">About me</p>
-        <h2 className="mb-2 text-theme-800 lg:mb-4">
+        <h2 className="mb-2 text-theme-800 lg:mb-4 leading-[1.5]">
           I’m a software engineer who loves developer experience and design engineering. I started in 2017 as a computer science student. In
           2020, I launched a VSCode extension that has over 78K installs and I’ve been hooked on creating ever since. These days, I build
           everything from web and mobile apps to browser extensions and open-source libraries.
