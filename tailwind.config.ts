@@ -24,8 +24,8 @@ export default {
       brand: colors.rose,
     },
     fontFamily: {
-      sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
-      mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
+      sans: ['var(--font-geist-pixel-grid)', ...defaultTheme.fontFamily.sans],
+      mono: ['var(--font-geist-mono)', ...defaultTheme.fontFamily.mono],
     },
   },
   presets: [createPreset({})],

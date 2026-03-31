@@ -1,5 +1,5 @@
-import { JetBrains_Mono } from 'next/font/google';
-import localFont from 'next/font/local';
+import { GeistMono } from 'geist/font/mono';
+import { GeistPixelGrid } from "geist/font/pixel";
 import type { ReactNode } from 'react';
 import BGSound from './BGSound';
 import { SETTINGS_STORAGE_KEY } from './consts';
@@ -8,8 +8,6 @@ import PaperTexture from './PaperTexture';
 import Providers from './Providers';
 import SettingsPopup from './SettingsPopup';
 
-const sans = localFont({ src: './GeneralSans-Variable.woff2', variable: '--font-sans', display: 'swap' });
-const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono', display: 'swap' });
 
 type Props = {
   children: ReactNode;
@@ -36,7 +34,7 @@ export default function AppLayout({ children }: Props) {
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${mono.variable} bg-theme-50 font-sans text-sm duration-500 lg:text-[length:--font-size]`}
+      className={`${GeistPixelGrid.variable} ${GeistMono.variable} bg-theme-50 font-sans text-sm duration-500 lg:text-[length:--font-size]`}
       suppressHydrationWarning
     >
       <head>
@@ -45,7 +43,7 @@ export default function AppLayout({ children }: Props) {
         <script dangerouslySetInnerHTML={{ __html: preloadScript }} />
       </head>
 
-      <body className="relative w-full bg-theme-50 font-[450] text-theme-950 antialiased duration-500 selection:bg-theme-200/75">
+      <body className="relative w-full bg-theme-50 text-theme-950 antialiased duration-500 selection:bg-theme-200/75">
         <Providers>
           <div className="motion-preset-blur-up motion-duration-500 lg:motion-duration-1000 mx-auto w-screen max-w-3xl px-5 py-10 lg:py-20">
             {children}
