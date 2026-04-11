@@ -17,7 +17,7 @@ export default function SettingsPopup() {
 
   const settingList = [
     {
-      category: 'Sound',
+      category: 'Haptic',
       settings: [
         {
           label: 'Clock sound',
@@ -30,7 +30,7 @@ export default function SettingsPopup() {
           ),
         },
         {
-          label: 'Background sound',
+          label: 'Zen mode',
           component: <Switch checked={settings.backgroundSound} onCheckedChange={(checked) => setSettings({ backgroundSound: checked })} />,
         },
       ],
