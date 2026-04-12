@@ -1,5 +1,5 @@
 import { GeistMono } from 'geist/font/mono';
-import { GeistPixelGrid } from "geist/font/pixel";
+import { GeistPixelGrid } from 'geist/font/pixel';
 import type { ReactNode } from 'react';
 import BGSound from './BGSound';
 import { SETTINGS_STORAGE_KEY } from './consts';
@@ -7,7 +7,6 @@ import './index.css';
 import PaperTexture from './PaperTexture';
 import Providers from './Providers';
 import SettingsPopup from './SettingsPopup';
-
 
 type Props = {
   children: ReactNode;

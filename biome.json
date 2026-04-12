@@ -1,7 +1,8 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.3.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.11/schema.json",
   "files": {
-    "maxSize": 4194304
+    "maxSize": 4194304,
+    "includes": ["!node_modules", "!.next", "!*.svg", "!*.ico", "!*.pdf"]
   },
   "linter": {
     "enabled": true,
@@ -23,7 +24,7 @@
         }
       }
     },
-    "ignore": ["/node_modules", "/.next"]
+    "includes": ["!/node_modules", "!/.next"]
   },
   "formatter": {
     "enabled": true,

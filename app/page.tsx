@@ -76,7 +76,7 @@ export default function AppPage() {
         </ul>
       </section>
       <Showcase title="Websites">
-        {websites.map(({ name, image }, index) => (
+        {websites.map(({ name, href, image }, index) => (
           <div
             key={name}
             style={cssvars({ delay: `${(index + 1) * 200}ms` })}
@@ -92,7 +92,7 @@ export default function AppPage() {
               className="relative aspect-[4/3] w-full overflow-hidden rounded-lg border border-theme-200/50 bg-theme-100 duration-500 hover:border-theme-200"
             />
             <Link
-              href={`https://www.${name}`}
+              href={href}
               target="_blank"
               className="group mt-1 inline-flex space-x-0.5 text-theme-600 duration-500 hover:text-theme-800 lg:mt-2"
             >

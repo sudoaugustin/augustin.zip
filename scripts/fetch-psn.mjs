@@ -1,9 +1,4 @@
-import {
-  exchangeNpssoForAccessCode,
-  exchangeAccessCodeForAuthTokens,
-  getUserPlayedGames,
-  getUserTitles,
-} from 'psn-api';
+import { exchangeNpssoForAccessCode, exchangeAccessCodeForAuthTokens, getUserPlayedGames, getUserTitles } from 'psn-api';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -48,9 +43,7 @@ async function main() {
     getUserTitles(authorization, 'me', { limit: 100 }),
   ]);
 
-  const trophyByName = Object.fromEntries(
-    trophyTitles.map((t) => [t.trophyTitleName, t])
-  );
+  const trophyByName = Object.fromEntries(trophyTitles.map((t) => [t.trophyTitleName, t]));
 
   const games = titles.filter((t) => t.category.includes('game')).slice(0, 10);
 

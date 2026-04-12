@@ -6,14 +6,13 @@
     "start": "next start",
     "fetch-psn": "node scripts/fetch-psn.mjs",
     "build": "node scripts/fetch-psn.mjs && next build",
+    "format": "biome format --write .",
     "prepare": "husky install"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@radix-ui/react-scroll-area": "^1.2.1",
     "@radix-ui/react-switch": "^1.2.6",
-    "@radix-ui/react-toast": "^1.2.15",
-    "@splinetool/react-spline": "^4.0.0",
     "fumadocs-core": "13.4.10",
     "fumadocs-mdx": "10.0.2",
     "fumadocs-ui": "13.4.10",
@@ -24,11 +23,10 @@
     "psn-api": "^2.18.0",
     "radix-ui": "^1.4.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-if": "^4.1.5"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.4.11",
     "@total-typescript/ts-reset": "^0.3.7",
     "@types/mdx": "^2.0.13",
     "@types/node": "^20.17.7",
