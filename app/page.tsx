@@ -1,5 +1,7 @@
-import { ArrowDownOnSquareIcon, ArrowUpRightIcon, DocumentTextIcon, EnvelopeIcon } from '@heroicons/react/16/solid';
+import { ArrowDownOnSquareIcon, ArrowUpRightIcon, CheckBadgeIcon, DocumentTextIcon, EnvelopeIcon } from '@heroicons/react/16/solid';
+import { TrophyIcon } from '@heroicons/react/24/outline';
 import projects from 'data/projects.json';
+import psn from 'data/psn.json';
 import websites from 'data/websites.json';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -129,6 +131,46 @@ export default function AppPage() {
           ))}
         </Showcase>
       ))}
+
+      <Showcase title="Side Quests">
+        {psn.games.map(({ name, iconUrl, playDuration, progress, completed }, index) => (
+          <div
+            key={name}
+            style={cssvars({ delay: `${(index + 1) * 200}ms` })}
+            className="motion-delay-[--delay] motion-preset-fade w-80 rounded-lg border border-theme-200/75 bg-theme-100 p-4 duration-500 hover:border-theme-200 lg:w-[21.25rem]"
+          >
+            <Image src={iconUrl} alt="" width={64} height={64} className="w-12 rounded-lg lg:w-16" />
+            <div className="mt-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-semibold text-theme-800">{name}</h3>
+                  <p className="mt-0.5 text-sm text-theme-600">{playDuration}</p>
+                </div>
+                <div className="relative">
+                  <svg viewBox="0 0 36 36" className="w-10 lg:w-12">
+                    <circle cx="18" cy="18" r="16" fill="none" strokeWidth="3" className="stroke-theme-200" />
+                    <circle
+                      cx="18"
+                      cy="18"
+                      r="16"
+                      fill="none"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      className="stroke-theme-600"
+                      strokeDasharray={`${progress} ${100 - progress}`}
+                      strokeDashoffset="25"
+                    />
+                    <foreignObject x="11" y="11" width="14" height="14">
+                      <TrophyIcon className="h-full w-full text-theme-600" />
+                    </foreignObject>
+                  </svg>
+                  {completed && <CheckBadgeIcon className="absolute right-0 bottom-1 w-4 text-green-500" />}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Showcase>
     </main>
   );
 }

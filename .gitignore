@@ -4,6 +4,7 @@
 .contentlayer
 .content-collections
 .source
+data/psn.json
 
 
 # dependencies

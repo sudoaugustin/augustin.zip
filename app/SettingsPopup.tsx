@@ -89,7 +89,7 @@ export default function SettingsPopup() {
         'fixed right-5 bottom-5 z-5 overflow-hidden rounded-[1.25rem] border border-theme-200/75 bg-theme-100 lg:right-10 lg:bottom-10'
       }
       initial={{ width: '2.5rem', height: '2.5rem' }}
-      animate={{ width: isOpen ? '20rem' : '2.5rem', height: isOpen ? '20rem' : '2.5rem', borderRadius: isOpen ? '0.75rem' : '1.25rem' }}
+      animate={{ width: isOpen ? '21rem' : '2.5rem', height: isOpen ? '20rem' : '2.5rem', borderRadius: isOpen ? '0.75rem' : '1.25rem' }}
       transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
     >
       {isOpen ? (
@@ -103,10 +103,10 @@ export default function SettingsPopup() {
           </button>
           <ScrollArea.Root className="h-full overflow-hidden">
             <ScrollArea.Viewport className="h-full">
-              <div className="flex flex-col gap-5 p-2.5">
+              <div className="flex flex-col gap-8 p-4">
                 {settingList.map(({ category, settings, information }) => (
                   <div key={category} className="text-sm text-theme-800">
-                    <div className="mb-1.5 flex items-center gap-1">
+                    <div className="mb-2.5 flex items-center gap-1">
                       <p className="font-semibold">{category}</p>
                       {information && (
                         <Tooltip.Root>

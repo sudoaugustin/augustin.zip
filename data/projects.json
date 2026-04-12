@@ -64,7 +64,7 @@
       {
         "logo": "/images/projects/TailwindCSSTranspiler.svg",
         "name": "Tailwind Transpiler(Unofficial)",
-        "downloads": "64.8K",
+        "downloads": "85K",
         "description": "Transpile TailwindCSS files into pure CSS.",
         "links": [
           { "text": "Install", "href": "https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailwindcss-transpiler" },
@@ -74,7 +74,7 @@
       {
         "logo": "/images/projects/VSLook.svg",
         "name": "VSLook",
-        "downloads": "8.5K",
+        "downloads": "10K",
         "description": "No-code tool to create VSCode theme.",
         "links": [
           { "text": "Install", "href": "https://marketplace.visualstudio.com/items?itemName=sudoaugustin.vslook" },
@@ -84,7 +84,7 @@
       {
         "logo": "/images/projects/Tailpile.svg",
         "name": "Tailpile",
-        "downloads": "5.3K",
+        "downloads": "6.5K",
         "description": "Transpile TailwindCSS files into pure CSS.",
         "links": [
           { "text": "Install", "href": "https://marketplace.visualstudio.com/items?itemName=sudoaugustin.tailpile" },
