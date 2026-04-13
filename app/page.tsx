@@ -147,7 +147,7 @@ export default function AppPage() {
             <div className="mt-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-semibold text-theme-800">{name}</h3>
+                  <h3 className="font-semibold text-theme-800 capitalize">{name}</h3>
                   <p className="mt-0.5 text-sm text-theme-600">{playDuration}</p>
                 </div>
                 <div className="relative">
@@ -161,14 +161,13 @@ export default function AppPage() {
                       strokeWidth="3"
                       strokeLinecap="round"
                       className="stroke-theme-600"
-                      strokeDasharray={`${progress} ${100 - progress}`}
+                      strokeDasharray={completed ? `100 0` : `${progress} ${100 - progress}`}
                       strokeDashoffset="25"
                     />
                     <foreignObject x="11" y="11" width="14" height="14">
-                      <TrophyIcon className="h-full w-full text-theme-600" />
+                      {completed?<CheckBadgeIcon className="h-full w-full text-theme-600" />:<TrophyIcon className="h-full w-full text-theme-600" />}
                     </foreignObject>
                   </svg>
-                  {completed && <CheckBadgeIcon className="absolute right-0 bottom-1 w-4 text-green-500" />}
                 </div>
               </div>
             </div>

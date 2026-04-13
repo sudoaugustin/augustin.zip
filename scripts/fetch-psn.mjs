@@ -45,7 +45,8 @@ async function main() {
 
   const trophyByName = Object.fromEntries(trophyTitles.map((t) => [t.trophyTitleName, t]));
 
-  const games = titles.filter((t) => t.category.includes('game')).slice(0, 10);
+  const excludedGames = new Set(['Where Winds Meet (F2P)']);
+  const games = titles.filter((t) => t.category.includes('game') && !excludedGames.has(t.name)).slice(0, 10);
 
   // Manually mark games you've completed (PSN doesn't track this)
   const completedGames = new Set([
@@ -54,14 +55,13 @@ async function main() {
     'RESIDENT EVIL 7 biohazard',
     'Resident Evil Village',
     'Grand Theft Auto V (PlayStation®5)',
-    'Where Winds Meet (F2P)',
   ]);
 
   const data = {
     games: games.map((title) => {
       const trophy = trophyByName[title.name];
       return {
-        name: title.name,
+        name: title.name.toLocaleLowerCase(),
         iconUrl: title.imageUrl,
         playDuration: parseDuration(title.playDuration),
         progress: trophy?.progress ?? 0,
