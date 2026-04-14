@@ -86,7 +86,7 @@ export default function SettingsPopup() {
   return (
     <motion.div
       className={
-        'fixed right-5 bottom-5 z-5 overflow-hidden rounded-[1.25rem] border border-theme-200/75 bg-theme-100 lg:right-10 lg:bottom-10'
+        'fixed right-5 bottom-5 z-5 overflow-hidden rounded-[1.25rem] border border-theme-200/75 shadow-lg shadow-theme-400/25 bg-theme-100 lg:right-10 lg:bottom-10'
       }
       initial={{ width: '2.5rem', height: '2.5rem' }}
       animate={{ width: isOpen ? '21rem' : '2.5rem', height: isOpen ? '20rem' : '2.5rem', borderRadius: isOpen ? '0.75rem' : '1.25rem' }}
@@ -124,9 +124,9 @@ export default function SettingsPopup() {
                         </Tooltip.Root>
                       )}
                     </div>
-                    <div className="divide-y divide-theme-200 rounded-lg bg-theme-200/50 px-2">
+                    <div className="divide-y divide-theme-200 rounded-lg bg-theme-200/50 px-2.5">
                       {settings.map(({ label, component, ...rest }) => (
-                        <div key={label} className={`flex items-center justify-between py-2 ${'className' in rest ? rest.className : ''}`}>
+                        <div key={label} className={`flex items-center justify-between py-2.5 ${'className' in rest ? rest.className : ''}`}>
                           <p>{label}</p>
                           {component}
                         </div>
