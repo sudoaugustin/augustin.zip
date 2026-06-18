@@ -49,7 +49,7 @@ export default function AppPage() {
         </div>
         <div className="flex flex-col items-center">
           <Clock />
-          <p className="mt-1 font-medium text-theme-400 text-xs">UTC + 6:30</p>
+          <p className="mt-1 font-medium text-theme-400 text-xs">UTC + 5:30</p>
         </div>
       </header>
 

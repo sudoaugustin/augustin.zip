@@ -20,7 +20,7 @@ const useTime = () => {
 const getTimePercent = () => {
   const now = new Date();
   const utc = now.getTime() + now.getTimezoneOffset() * 60000;
-  const zonedDate = new Date(utc + 6.5 * 60 * 60 * 1000);
+  const zonedDate = new Date(utc + 5.5 * 60 * 60 * 1000);
 
   return { h: (zonedDate.getHours() % 12 || 12) / 12, m: zonedDate.getMinutes() / 60, s: zonedDate.getSeconds() / 60 };
 };
